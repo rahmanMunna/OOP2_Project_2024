@@ -1,0 +1,10 @@
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Program_Files.exe.config
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Program_Files.exe
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Program_Files.pdb
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.AssemblyReference.cache
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.AddProduct.resources
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Properties.Resources.resources
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.GenerateResource.cache
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.CoreCompileInputs.cache
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.exe
+C:\C# Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.pdb
