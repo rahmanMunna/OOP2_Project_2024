@@ -17,7 +17,7 @@ namespace Program_Files
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new AddProduct());
+            Application.Run(new AddProduct());
         }
     }
 }
