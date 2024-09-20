@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program_Files.Classes;
+using Program_Files.Dashboard;
 
 
 namespace Program_Files.Admin_Panel
@@ -17,6 +18,7 @@ namespace Program_Files.Admin_Panel
         private DataTable dt = new DataTable();
         private string barcode;
         private ComponentList component = new ComponentList();
+        private AdminDashboard adminDashboard;
 
         private int Serial {  get; set; }   
         private string Barcode
@@ -95,7 +97,10 @@ namespace Program_Files.Admin_Panel
         {
             InitializeComponent();
         }
-
+        public AddProduct(AdminDashboard adminDashboard) : this()
+        {
+           this.adminDashboard = adminDashboard;
+        }
         private void AddProduct_Load(object sender, EventArgs e)
         {
             this.AddQuantiyValue();
@@ -313,6 +318,13 @@ namespace Program_Files.Admin_Panel
             cmbModel.Items.Clear();
             this.ShowModel(cmbBrandName.Text);
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.adminDashboard.Visible  = true;
+            
         }
     }
 }

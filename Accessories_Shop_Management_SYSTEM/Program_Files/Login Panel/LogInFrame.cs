@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Program_Files.Dashboard;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,6 +79,12 @@ namespace Program_Files.Login_Panel
         private void panel2_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonSignIn_Click(object sender, EventArgs e)
+        {
+            new AdminDashboard(this).Show();
+            this.Hide();
         }
     }
 }

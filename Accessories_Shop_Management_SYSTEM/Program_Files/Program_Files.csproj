@@ -49,10 +49,22 @@
     <Compile Include="Admin Panel\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Panel\AddProduct.Designer.cs" />
+    <Compile Include="Admin Panel\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin Panel\EmpInfoInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Panel\EmpInfoInsert.Designer.cs">
+      <DependentUpon>EmpInfoInsert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ComponentList.cs" />
-    <Compile Include="Classes\Product.cs" />
-    <Compile Include="Dashboard\AdminDashBoard.cs" />
+    <Compile Include="Dashboard\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\DBConnection.cs" />
     <Compile Include="Employee Panel\PrintOrderList.cs">
       <SubType>Form</SubType>
@@ -80,7 +92,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin Panel\AddProduct.resx" />
+    <EmbeddedResource Include="Admin Panel\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Panel\EmpInfoInsert.resx">
+      <DependentUpon>EmpInfoInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employee Panel\PrintOrderList.resx">
       <DependentUpon>PrintOrderList.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,7 +160,12 @@
   <ItemGroup>
     <None Include="Resources\icons8-right-arrow-ezgif.com-resize-2.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\icons8-admin-96.png" />
+    <Content Include="Resources\Logout.png" />
+    <Content Include="Resources\Profile.png" />
+    <Content Include="Resources\Search Property.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-checkmark-32.png" />
   </ItemGroup>

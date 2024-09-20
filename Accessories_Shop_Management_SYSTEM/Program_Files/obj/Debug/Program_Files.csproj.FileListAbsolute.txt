@@ -22,3 +22,5 @@ D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Pr
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.UpdatePassword.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Login_Panel.LoginFrame.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.AddProduct.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Dashboard.AdminDashboard.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.EmpInfoInsert.resources

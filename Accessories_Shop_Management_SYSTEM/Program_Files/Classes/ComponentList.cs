@@ -16,6 +16,7 @@ namespace Program_Files.Classes
         internal Dictionary<string, List<string>> monitors;
         internal Dictionary<string, List<string>> motherboards;
         internal Dictionary<string, List<string>> mouse;
+        internal Dictionary<string, List<string>> gpus;
         internal ComponentList() 
         {
             
@@ -26,6 +27,7 @@ namespace Program_Files.Classes
             this.Monitor();
             this.MotherBoard();
             this.Mouse();   
+            this.GPU();
         }
 
         internal void Proccessor()
@@ -430,8 +432,71 @@ namespace Program_Files.Classes
             }
         };
 
+        }      
+        internal void GPU()
+        {
+           gpus = new Dictionary<string, List<string>>
+         {
+            { "NVIDIA", new List<string>
+                {
+                    "GeForce RTX 4090",
+                    "GeForce RTX 4080",
+                    "GeForce RTX 4070 Ti",
+                    "GeForce RTX 3060 Ti",
+                    "GeForce GTX 1660 Super"
+                }
+            },
+            { "AMD", new List<string>
+                {
+                    "Radeon RX 7900 XTX",
+                    "Radeon RX 7900 XT",
+                    "Radeon RX 6800 XT",
+                    "Radeon RX 6700 XT",
+                    "Radeon RX 6500 XT"
+                }
+            },
+            { "Intel", new List<string>
+                {
+                    "Arc A770",
+                    "Arc A750",
+                    "Arc A380"
+                }
+            },
+            { "ASUS", new List<string>
+                {
+                    "ROG Strix GeForce RTX 4090",
+                    "TUF Gaming GeForce RTX 3080",
+                    "Dual Radeon RX 6700 XT",
+                    "ROG Strix Radeon RX 6800 XT"
+                }
+            },
+            { "MSI", new List<string>
+                {
+                    "GeForce RTX 4090 SUPRIM X",
+                    "GeForce RTX 3070 GAMING X",
+                    "Radeon RX 6800 XT GAMING X",
+                    "GeForce GTX 1660 VENTUS XS"
+                }
+            },
+            { "Gigabyte", new List<string>
+                {
+                    "AORUS GeForce RTX 4090",
+                    "GeForce RTX 3080 GAMING OC",
+                    "Radeon RX 6700 XT GAMING OC",
+                    "GeForce GTX 1650 WINDFORCE"
+                }
+            },
+            { "EVGA", new List<string>
+                {
+                    "GeForce RTX 3090 FTW3",
+                    "GeForce RTX 3080 XC3",
+                    "GeForce GTX 1660 Ti SC Ultra",
+                    "GeForce RTX 3070 FTW"
+                }
+            },
+            
+        };
         }
-       
         //internal void Print()
         //{
         //    foreach (var series in amdProcessors)

@@ -84,6 +84,7 @@
             this.buttonSignIn.TabIndex = 20;
             this.buttonSignIn.Text = "SignIn";
             this.buttonSignIn.UseVisualStyleBackColor = false;
+            this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
             // buttonClear
             // 
@@ -172,7 +173,7 @@
             this.panel3.Size = new System.Drawing.Size(95, 100);
             this.panel3.TabIndex = 15;
             // 
-            // LOGIN
+            // LoginFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -195,7 +196,7 @@
             this.ForeColor = System.Drawing.Color.Teal;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.Name = "LOGIN";
+            this.Name = "LoginFrame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " LoginFrame";
             this.Load += new System.EventHandler(this.LOGIN_Load);
