@@ -51,7 +51,7 @@
             this.cmbModel = new System.Windows.Forms.ComboBox();
             this.lblBrandName = new System.Windows.Forms.Label();
             this.cmbBrandName = new System.Windows.Forms.ComboBox();
-            this.lblType = new System.Windows.Forms.Label();
+            this.lblComponent = new System.Windows.Forms.Label();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.pnlFields.Controls.Add(this.cmbModel);
             this.pnlFields.Controls.Add(this.lblBrandName);
             this.pnlFields.Controls.Add(this.cmbBrandName);
-            this.pnlFields.Controls.Add(this.lblType);
+            this.pnlFields.Controls.Add(this.lblComponent);
             this.pnlFields.Controls.Add(this.cmbType);
             this.pnlFields.ForeColor = System.Drawing.Color.DarkSlateBlue;
             this.pnlFields.Location = new System.Drawing.Point(31, 106);
@@ -321,16 +321,8 @@
             // 
             // cmbModel
             // 
-            this.cmbModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModel.FormattingEnabled = true;
-            this.cmbModel.Items.AddRange(new object[] {
-            "GPU",
-            "Monitor",
-            "Motherboard",
-            "Proccessor",
-            "RAM",
-            "SSD"});
             this.cmbModel.Location = new System.Drawing.Point(524, 117);
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(176, 29);
@@ -348,30 +340,23 @@
             // 
             // cmbBrandName
             // 
-            this.cmbBrandName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBrandName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBrandName.FormattingEnabled = true;
-            this.cmbBrandName.Items.AddRange(new object[] {
-            "GPU",
-            "Monitor",
-            "Motherboard",
-            "Proccessor",
-            "RAM",
-            "SSD"});
             this.cmbBrandName.Location = new System.Drawing.Point(285, 117);
             this.cmbBrandName.Name = "cmbBrandName";
             this.cmbBrandName.Size = new System.Drawing.Size(181, 29);
             this.cmbBrandName.Sorted = true;
             this.cmbBrandName.TabIndex = 4;
+            this.cmbBrandName.SelectedValueChanged += new System.EventHandler(this.cmbBrandName_SelectedValueChanged);
             // 
-            // lblType
+            // lblComponent
             // 
-            this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(46, 59);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(183, 29);
-            this.lblType.TabIndex = 3;
-            this.lblType.Text = "Select Type";
+            this.lblComponent.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComponent.Location = new System.Drawing.Point(46, 59);
+            this.lblComponent.Name = "lblComponent";
+            this.lblComponent.Size = new System.Drawing.Size(207, 29);
+            this.lblComponent.TabIndex = 3;
+            this.lblComponent.Text = "Select Component";
             // 
             // cmbType
             // 
@@ -380,8 +365,10 @@
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
             "GPU",
+            "Keyboard",
             "Monitor",
             "Motherboard",
+            "Mouse",
             "Proccessor",
             "RAM",
             "SSD"});
@@ -502,7 +489,7 @@
         private System.Windows.Forms.Panel pnlTitle;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblComponent;
         private System.Windows.Forms.Label lblBrandName;
         private System.Windows.Forms.ComboBox cmbBrandName;
         private System.Windows.Forms.Label lblModel;

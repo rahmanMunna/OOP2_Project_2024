@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Program_Files.Classes;
 
 
 namespace Program_Files.Admin_Panel
@@ -15,6 +16,7 @@ namespace Program_Files.Admin_Panel
     {
         private DataTable dt = new DataTable();
         private string barcode;
+        private ComponentList component = new ComponentList();
 
         private int Serial {  get; set; }   
         private string Barcode
@@ -99,9 +101,166 @@ namespace Program_Files.Admin_Panel
             this.AddQuantiyValue();
             this.AddTableColumn();
         }
+        
+        internal void ShowModel(string selectedBrand)
+        {
+            string componentName = cmbType.Text.ToLower();
 
+            if(componentName == "proccessor")
+            {
+                List<string> models = component.processors[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+
+            }
+            else if(componentName == "gpu")
+            {
+                List<string> models = component.gpus[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+            else if (componentName == "ram")
+            {
+                List<string> models = component.ram[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+            else if (componentName == "ssd")
+            {
+                List<string> models = component.ssds[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+
+            }
+            else if (componentName == "keyboard")
+            {
+                List<string> models = component.keyboards[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+
+            else if (componentName == "mouse")
+            {
+                List<string> models = component.mouse[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+            else if (componentName == "motherboard")
+            {
+                List<string> models = component.motherboards[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+            else if (componentName == "monitor")
+            {
+                List<string> models = component.monitors[selectedBrand];
+
+                foreach (var model in models)
+                {
+                    cmbModel.Items.Add(model);
+                }
+            }
+        }
+        internal void ShowBrandName(string selectedItem)
+        {
+            cmbBrandName.SelectedIndex = -1;
+            if (selectedItem == "proccessor")
+            {
+                
+                foreach (var keys in component.processors)
+                {
+                    
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+                
+            }
+            else if (selectedItem == "gpu")
+            {
+                
+                foreach (var keys in component.gpus)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "mouse")
+            {
+                
+                foreach (var keys in component.mouse)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "keyboard")
+            {
+                
+                foreach (var keys in component.keyboards)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "monitor")
+            {
+                
+                foreach (var keys in component.monitors)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "ram")
+            {
+                
+                foreach (var keys in component.ram)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "ssd")
+            {
+               
+                foreach (var keys in component.ssds)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else if (selectedItem == "motherboard")
+            {
+                
+                foreach (var keys in component.motherboards)
+                {
+                    cmbBrandName.Items.Add(keys.Key);
+                }
+            }
+            else
+            {
+                cmbBrandName.SelectedIndex = -1;
+            }
+        }
         private void cmbType_SelectedValueChanged(object sender, EventArgs e)
         {
+
+            cmbBrandName.Items.Clear();
+            string selectedItem = this.cmbType.Text.ToLower();
             if (this.cmbType.Text == "RAM" || this.cmbType.Text == "SSD")
             {
                 this.pnlAdditional.Visible = true;
@@ -115,6 +274,13 @@ namespace Program_Files.Admin_Panel
             {
                 this.pnlAdditional.Visible = false;
             }
+
+            this.ShowBrandName(selectedItem);
+           //this.cmbBrandName.SelectedIndex = -1;
+            
+            
+
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -139,6 +305,13 @@ namespace Program_Files.Admin_Panel
                 MessageBox.Show("Fill all the required Field");                
             }
             
+
+        }
+
+        private void cmbBrandName_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cmbModel.Items.Clear();
+            this.ShowModel(cmbBrandName.Text);
 
         }
     }
