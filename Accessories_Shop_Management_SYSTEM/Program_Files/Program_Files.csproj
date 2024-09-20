@@ -49,24 +49,49 @@
     <Compile Include="Admin Panel\AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Panel\AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin Panel\ManageProduct.cs" />
+    <Compile Include="Admin Panel\AddProduct.Designer.cs" />
+    <Compile Include="Classes\ComponentList.cs" />
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Dashboard\AdminDashBoard.cs" />
     <Compile Include="DataBase\DBConnection.cs" />
-    <Compile Include="Employee Panel\SellProduct.cs" />
-    <Compile Include="Login Panel\LogInFrame.cs">
+    <Compile Include="Employee Panel\PrintOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login Panel\LogInFrame.Designer.cs">
-      <DependentUpon>LogInFrame.cs</DependentUpon>
+    <Compile Include="Employee Panel\PrintOrderList.Designer.cs">
+      <DependentUpon>PrintOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Panel\SellProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Panel\SellProduct.Designer.cs">
+      <DependentUpon>SellProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee Panel\UpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Panel\UpdatePassword.Designer.cs">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login Panel\LoginFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login Panel\LoginFrame.Designer.cs">
+      <DependentUpon>LoginFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin Panel\AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Admin Panel\AddProduct.resx" />
+    <EmbeddedResource Include="Employee Panel\PrintOrderList.resx">
+      <DependentUpon>PrintOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Panel\SellProduct.resx">
+      <DependentUpon>SellProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Panel\UpdatePassword.resx">
+      <DependentUpon>UpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login Panel\LoginFrame.resx">
+      <DependentUpon>LoginFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,6 +116,45 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-button-32-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Online-Security-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-arrow.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-arrow-ezgif.com-resize.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-right-arrow-ezgif.com-resize-2.gif" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-checkmark-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-card-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BKash %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

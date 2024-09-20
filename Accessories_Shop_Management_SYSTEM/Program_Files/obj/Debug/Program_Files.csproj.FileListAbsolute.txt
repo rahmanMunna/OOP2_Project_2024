@@ -12,9 +12,13 @@ D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Pr
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Program_Files.exe
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\Program_Files.pdb
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.AssemblyReference.cache
-D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.AddProduct.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Properties.Resources.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.GenerateResource.cache
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.csproj.CoreCompileInputs.cache
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.exe
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.pdb
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.SellProduct.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.PrintOrderList.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.UpdatePassword.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Login_Panel.LoginFrame.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.AddProduct.resources
