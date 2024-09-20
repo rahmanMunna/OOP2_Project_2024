@@ -14,7 +14,7 @@ namespace Program_Files.Dashboard
 {
     public partial class AdminDashboard : Form
     {
-        private Button InsertInfoBtn;
+        private Button btnAddEmployee;
         private Button ViewBtn;
         private Button logoutBtn;
         private PictureBox pictureBox1;
@@ -60,6 +60,12 @@ namespace Program_Files.Dashboard
         {
             this.Hide();
             this.loginFrame.Visible = true;
+        }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            new AddEmployee(this).Visible = true;   
+            this.Hide();
         }
     }
 }

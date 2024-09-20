@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
-            this.InsertInfoBtn = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
             this.ViewBtn = new System.Windows.Forms.Button();
             this.logoutBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,16 +47,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
-            // InsertInfoBtn
+            // btnAddEmployee
             // 
-            this.InsertInfoBtn.BackColor = System.Drawing.SystemColors.Info;
-            this.InsertInfoBtn.Font = new System.Drawing.Font("Lucida Fax", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertInfoBtn.Location = new System.Drawing.Point(137, 470);
-            this.InsertInfoBtn.Name = "InsertInfoBtn";
-            this.InsertInfoBtn.Size = new System.Drawing.Size(235, 60);
-            this.InsertInfoBtn.TabIndex = 0;
-            this.InsertInfoBtn.Text = "Employee";
-            this.InsertInfoBtn.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.BackColor = System.Drawing.SystemColors.Info;
+            this.btnAddEmployee.Font = new System.Drawing.Font("Lucida Fax", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEmployee.Location = new System.Drawing.Point(137, 470);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(235, 60);
+            this.btnAddEmployee.TabIndex = 0;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = false;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // ViewBtn
             // 
@@ -182,7 +183,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.ViewBtn);
-            this.Controls.Add(this.InsertInfoBtn);
+            this.Controls.Add(this.btnAddEmployee);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

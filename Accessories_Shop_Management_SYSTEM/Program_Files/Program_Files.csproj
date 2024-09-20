@@ -52,11 +52,11 @@
     <Compile Include="Admin Panel\AddProduct.Designer.cs">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin Panel\EmpInfoInsert.cs">
+    <Compile Include="Admin Panel\Addemployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin Panel\EmpInfoInsert.Designer.cs">
-      <DependentUpon>EmpInfoInsert.cs</DependentUpon>
+    <Compile Include="Admin Panel\Addemployee.Designer.cs">
+      <DependentUpon>Addemployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ComponentList.cs" />
     <Compile Include="Dashboard\AdminDashboard.cs">
@@ -95,8 +95,8 @@
     <EmbeddedResource Include="Admin Panel\AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin Panel\EmpInfoInsert.resx">
-      <DependentUpon>EmpInfoInsert.cs</DependentUpon>
+    <EmbeddedResource Include="Admin Panel\Addemployee.resx">
+      <DependentUpon>Addemployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>

@@ -19,7 +19,7 @@ namespace Program_Files
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EmpInfoInsert());
+            Application.Run(new LoginFrame());
         }
     }
 }

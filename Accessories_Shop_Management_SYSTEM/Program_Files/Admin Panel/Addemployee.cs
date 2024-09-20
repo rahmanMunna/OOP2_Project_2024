@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Program_Files.Dashboard;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,17 @@ using System.Windows.Forms;
 
 namespace Program_Files
 {
-    public partial class EmpInfoInsert : Form
+    public partial class AddEmployee : Form
     {
-        public EmpInfoInsert()
+        private AdminDashboard adminDashboard;
+        public AddEmployee()
         {
             InitializeComponent();
+            //DisplayEmp();
+        }
+        public AddEmployee(AdminDashboard adminDashboard) : this()
+        {
+            this.adminDashboard = adminDashboard;   
             //DisplayEmp();
         }
         //readonly SqlConnection Con = new SqlConnection(connectionString: @"Data Source =(LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\HP\OneDrive\Microsoft Teams Chat Files\Documents\EmpTbl.mdf;Integrated Security = True; Connect Timeout = 30");
@@ -51,7 +58,8 @@ namespace Program_Files
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-          
+            this.Hide();
+            this.adminDashboard.Show();
         }
 
         //private void AddBtn_Click(object sender, EventArgs e)
@@ -220,6 +228,11 @@ namespace Program_Files
         private void btnAdd_Click(object sender, EventArgs e)
         {
             this.ClearAllFields();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
