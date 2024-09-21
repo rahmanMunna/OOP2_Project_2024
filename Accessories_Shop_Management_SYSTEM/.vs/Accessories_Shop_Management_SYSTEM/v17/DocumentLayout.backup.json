@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|d:\\c#_project_2024\\accessories_shop_management_system\\program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\admin panel\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\admin panel\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\admin panel\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\admin panel\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\admin panel\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\admin panel\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|d:\\c#_project_2024\\accessories_shop_management_system\\program_files\\classes\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\classes\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\classes\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\classes\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\login panel\\loginframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\login panel\\loginframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\employee panel\\printorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\employee panel\\printorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\employee panel\\sellproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\admin panel\\manageproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\admin panel\\manageproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\database\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\database\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\program_files\\classes\\componentlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78A053C7-0C4F-416B-8FE7-80E26907729B}|Program_Files\\Program_Files.csproj|solutionrelative:program_files\\classes\\componentlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,88 +58,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LogInFrame.cs [Design]",
-              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Login Panel\\LogInFrame.cs",
-              "RelativeDocumentMoniker": "Program_Files\\Login Panel\\LogInFrame.cs",
-              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Login Panel\\LogInFrame.cs [Design]",
-              "RelativeToolTip": "Program_Files\\Login Panel\\LogInFrame.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:22:19.641Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "SellProduct.cs",
               "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\SellProduct.cs",
               "RelativeDocumentMoniker": "Program_Files\\Employee Panel\\SellProduct.cs",
               "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\SellProduct.cs",
               "RelativeToolTip": "Program_Files\\Employee Panel\\SellProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAcwIUAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:21:59.09Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ManageProduct.cs",
-              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\ManageProduct.cs",
-              "RelativeDocumentMoniker": "Program_Files\\Admin Panel\\ManageProduct.cs",
-              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\ManageProduct.cs",
-              "RelativeToolTip": "Program_Files\\Admin Panel\\ManageProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:21:38.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminDashBoard.cs",
-              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Dashboard\\AdminDashBoard.cs",
-              "RelativeDocumentMoniker": "Program_Files\\Dashboard\\AdminDashBoard.cs",
-              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Dashboard\\AdminDashBoard.cs",
-              "RelativeToolTip": "Program_Files\\Dashboard\\AdminDashBoard.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:21:16.114Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DBConnection.cs",
-              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\DataBase\\DBConnection.cs",
-              "RelativeDocumentMoniker": "Program_Files\\DataBase\\DBConnection.cs",
-              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\DataBase\\DBConnection.cs",
-              "RelativeToolTip": "Program_Files\\DataBase\\DBConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:20:57.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Product.cs",
-              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\Product.cs",
-              "RelativeDocumentMoniker": "Program_Files\\Classes\\Product.cs",
-              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\Product.cs",
-              "RelativeToolTip": "Program_Files\\Classes\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:20:24.309Z",
+              "WhenOpened": "2024-09-21T18:54:22.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "SellProduct.cs [Design]",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\SellProduct.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Employee Panel\\SellProduct.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\SellProduct.cs [Design]",
+              "RelativeToolTip": "Program_Files\\Employee Panel\\SellProduct.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T18:54:13.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddProduct.cs",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\AddProduct.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Admin Panel\\AddProduct.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\AddProduct.cs",
+              "RelativeToolTip": "Program_Files\\Admin Panel\\AddProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAACjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:11:39.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Addemployee.cs [Design]",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\Addemployee.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Admin Panel\\Addemployee.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\Addemployee.cs [Design]",
+              "RelativeToolTip": "Program_Files\\Admin Panel\\Addemployee.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T17:11:37.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataBase.cs",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\DataBase.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Classes\\DataBase.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\DataBase.cs",
+              "RelativeToolTip": "Program_Files\\Classes\\DataBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T13:50:32.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddProduct.cs [Design]",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\AddProduct.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Admin Panel\\AddProduct.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Admin Panel\\AddProduct.cs [Design]",
+              "RelativeToolTip": "Program_Files\\Admin Panel\\AddProduct.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T08:56:22.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ComponentList.cs",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\ComponentList.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Classes\\ComponentList.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Classes\\ComponentList.cs",
+              "RelativeToolTip": "Program_Files\\Classes\\ComponentList.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T08:40:03.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Program.cs",
               "RelativeDocumentMoniker": "Program_Files\\Program.cs",
               "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Program.cs",
               "RelativeToolTip": "Program_Files\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T18:01:33.315Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-20T12:59:41.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PrintOrderList.cs [Design]",
+              "DocumentMoniker": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\PrintOrderList.cs",
+              "RelativeDocumentMoniker": "Program_Files\\Employee Panel\\PrintOrderList.cs",
+              "ToolTip": "D:\\C#_Project_2024\\Accessories_Shop_Management_SYSTEM\\Program_Files\\Employee Panel\\PrintOrderList.cs [Design]",
+              "RelativeToolTip": "Program_Files\\Employee Panel\\PrintOrderList.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T11:10:46.018Z"
             }
           ]
         }

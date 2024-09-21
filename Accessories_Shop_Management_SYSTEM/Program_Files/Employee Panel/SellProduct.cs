@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Program_Files.Employee_Panel
@@ -9,6 +10,8 @@ namespace Program_Files.Employee_Panel
         private DataTable dt1 = new DataTable();
         private DataTable dt2= new DataTable();
         private DataTable passDataTable= new DataTable();
+
+        private SqlConnection connection = new SqlConnection("Data Source=MUNNA\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True");
 
         private string ProductName
         {
@@ -34,22 +37,24 @@ namespace Program_Files.Employee_Panel
             for (int i = 0; i < 11; i++)
             {
                 
-                dgvShowProduct.Columns[i].Width = 155;
+                dgvShowProduct.Columns[i].Width = 144;
             }
         }
         private void AddCollumn()
         {
-            dt1.Columns.Add("Serial",typeof(int));
-            dt1.Columns.Add("Product Id");
-            dt1.Columns.Add("Component");
-            dt1.Columns.Add("Brand Name");
+            dt1.Columns.Add("SerialNo", typeof(int));
+            dt1.Columns.Add("Barcode");
+            dt1.Columns.Add("ComponentName");
+            dt1.Columns.Add("BrandName");
             dt1.Columns.Add("Model");
-            dt1.Columns.Add("Additional information");
+            dt1.Columns.Add("Capacity");
+            dt1.Columns.Add("Frequency");
             dt1.Columns.Add("Status");
-            dt1.Columns.Add("Available Quantity",typeof(int));
-            dt1.Columns.Add("Regular Price",typeof(int));
-            dt1.Columns.Add("Discount",typeof(int));
-            dt1.Columns.Add("Updated Price",typeof(int));
+            dt1.Columns.Add("Quantity", typeof(int));
+            dt1.Columns.Add("RegularPrice", typeof(int));
+            dt1.Columns.Add("Discount", typeof(int));
+            dt1.Columns.Add("UpdatedPrice", typeof(int));
+
 
 
             dt2.Columns.Add("Serial",typeof(int));
@@ -69,23 +74,39 @@ namespace Program_Files.Employee_Panel
         
         private void AddRowsProduct()
         {
-            dt1.Rows.Add(1,"p-01","Proccessor","AMD","Ryzen 5600X","6 core,12 threades","Availabale",10,13000,0,13000);
-            dt1.Rows.Add(2,"p-02","Proccessor","Intel","13900K","32 core,64 threades","Availabale",20,72000,50,36000);
-            dt1.Rows.Add(3,"p-03","Proccessor","AMD","Ryzen 5700G","8 core,16 threades","Availabale",10,19000,0,19000);
+            //dt1.Rows.Add(1,"p-01","Proccessor","AMD","Ryzen 5600X","6 core,12 threades","Availabale",10,13000,0,13000);
+            //dt1.Rows.Add(2,"p-02","Proccessor","Intel","13900K","32 core,64 threades","Availabale",20,72000,50,36000);
+            //dt1.Rows.Add(3,"p-03","Proccessor","AMD","Ryzen 5700G","8 core,16 threades","Availabale",10,19000,0,19000);
         }
         
+        private void LoadDataFromDB()
+        {
+           
+            string query = "SELECT SerialNo,Barcode,ComponentName,BrandName,Model,Capacity,Frequency,Status,Quantity,RegularPrice,Discount,UpdatedPrice FROM Product2TB WHERE Status = 'Available'";
+
+            connection.Open();
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(dt1);
+
+            connection.Close();
+            dgvShowProduct.DataSource = dt1;
+
+        }
         private void SellProduct_Load(object sender, EventArgs e)
         {
             this.AddCollumn();
             
             dgvShowOrderList.DataSource = dt2;
             
-            dgvShowProduct.DataSource = dt1;
+            
+            
+
+            this.LoadDataFromDB();
             this.ResizeOfDataFridView();
 
-            this.AddRowsProduct();
         }
-
         private void showQuantity(int lastNumber)
         {
             for(int i=1; i<=lastNumber; i++)
@@ -101,19 +122,19 @@ namespace Program_Files.Employee_Panel
                 {
                     int index = dgvShowProduct.CurrentCell.RowIndex;
                     DataGridViewRow selectedRow = dgvShowProduct.Rows[index];
-                    this.ProductName = selectedRow.Cells["Component"].Value + "-" + selectedRow.Cells["Brand Name"].Value + "-" + selectedRow.Cells["Model"].Value;
+                    this.ProductName = selectedRow.Cells["ComponentName"].Value + "-" + selectedRow.Cells["BrandName"].Value + "-" + selectedRow.Cells["Model"].Value;
                     //this.showQuantity(Convert.ToInt32(selectedRow.Cells["Available Quantity"].Value));
                     int quantity = Convert.ToInt32(cmbQuantity.Text);
-                    int availableQuantity = Convert.ToInt32(selectedRow.Cells["Available Quantity"].Value);
+                    int availableQuantity = Convert.ToInt32(selectedRow.Cells["Quantity"].Value);
 
                     if (quantity <= availableQuantity)
                     {                        
-                        int discountAmountPerUnit = Convert.ToInt32(selectedRow.Cells["Regular Price"].Value) - Convert.ToInt32(selectedRow.Cells["Updated Price"].Value);
+                        int discountAmountPerUnit = Convert.ToInt32(selectedRow.Cells["RegularPrice"].Value) - Convert.ToInt32(selectedRow.Cells["UpdatedPrice"].Value);
                         int disCoountTotal = discountAmountPerUnit * quantity;
-                        int totalPrice = Convert.ToInt32(selectedRow.Cells["Regular Price"].Value) * quantity - disCoountTotal;
-                        selectedRow.Cells["Available Quantity"].Value = (availableQuantity - quantity);
+                        int totalPrice = Convert.ToInt32(selectedRow.Cells["RegularPrice"].Value) * quantity - disCoountTotal;
+                        selectedRow.Cells["Quantity"].Value = (availableQuantity - quantity);
 
-                        dt2.Rows.Add(1, selectedRow.Cells["Product Id"].Value.ToString(), this.ProductName, quantity.ToString(), selectedRow.Cells["Regular Price"].Value.ToString(), disCoountTotal.ToString(), totalPrice.ToString());
+                        dt2.Rows.Add(1, selectedRow.Cells["Barcode"].Value.ToString(), this.ProductName, quantity.ToString(), selectedRow.Cells["RegularPrice"].Value.ToString(), disCoountTotal.ToString(), totalPrice.ToString());
                         cmbQuantity.SelectedIndex = -1;
                     }
                     else
@@ -131,7 +152,7 @@ namespace Program_Files.Employee_Panel
 
 
         }
-       private void btnRemove_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
             int index = dgvShowOrderList.CurrentCell.RowIndex;
 
@@ -148,7 +169,6 @@ namespace Program_Files.Employee_Panel
             dgvShowOrderList.Rows.RemoveAt(index);
 
         }
-
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
             foreach(DataGridViewRow row in dgvShowOrderList.Rows)
@@ -165,5 +185,8 @@ namespace Program_Files.Employee_Panel
             new PrintOrderList(this,passDataTable).Visible = true;
             this.Visible = false;
         }
+
+
+
     }
 }

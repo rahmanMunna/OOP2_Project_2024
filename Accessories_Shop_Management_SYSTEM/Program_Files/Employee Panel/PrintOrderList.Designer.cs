@@ -285,6 +285,7 @@
             this.btnConfirm.Text = "Confirm Order";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // PrintOrderList
             // 

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,7 +64,14 @@
     <Compile Include="Admin Panel\Addemployee.Designer.cs">
       <DependentUpon>Addemployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin Panel\ManageProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Panel\ManageProduct.Designer.cs">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ComponentList.cs" />
+    <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Dashboard\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +111,9 @@
     <EmbeddedResource Include="Admin Panel\Addemployee.resx">
       <DependentUpon>Addemployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin Panel\ManageProduct.resx">
+      <DependentUpon>ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +139,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

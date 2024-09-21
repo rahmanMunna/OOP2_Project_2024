@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program_Files.Classes;
 using Program_Files.Dashboard;
+using System.Data.SqlClient;
+using System.Data;
+using System.Collections;
+using Org.BouncyCastle.Asn1.Icao;
 
 
 namespace Program_Files.Admin_Panel
@@ -19,6 +23,12 @@ namespace Program_Files.Admin_Panel
         private string barcode;
         private ComponentList component = new ComponentList();
         private AdminDashboard adminDashboard;
+        private int serialNo;
+        //private Random random = new Random();
+
+        private SqlConnection connection = new SqlConnection("Data Source=MUNNA\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True");
+
+        
 
         private int Serial {  get; set; }   
         private string Barcode
@@ -42,23 +52,50 @@ namespace Program_Files.Admin_Panel
         //preparing DataTable for Grid
         private void AddTableColumn()
         {
-            dt.Columns.Add("Serial",typeof(int));
+            //dt.Columns.Add("Serial",typeof(int));
             dt.Columns.Add("Barcode");
-            dt.Columns.Add("Type");
+            dt.Columns.Add("Component");
             dt.Columns.Add("BrandName");
             dt.Columns.Add("Model");
             dt.Columns.Add("Capacity");
             dt.Columns.Add("Frequency");
+            dt.Columns.Add("Warranty");
             dt.Columns.Add("Quantity");
-            dt.Columns.Add("Buying Price");
-            dt.Columns.Add("Discount");
+            dt.Columns.Add("Buying Price");           
             dt.Columns.Add("Regular Price");
+            dt.Columns.Add("Discount");
             dt.Columns.Add("Updated Price");
             dt.Columns.Add("Status");
             dt.Columns.Add("Assign Date");
             dt.Columns.Add("Added By");
+           
         }
 
+        //internal void Exist(params string[]value)
+        //{
+        //    connection.Open();
+        //    string query = "SELECT ComponentName,BrandName,Model,Capacity,Frequency FROM Product2TB WHERE ComponentName = @componen";
+        //    SqlCommand cmd = new SqlCommand();
+        //}
+        internal int GetLastRowSerialNo()
+        {
+
+            connection.Open();
+            string query = "SELECT TOP 1  SerialNo from Product2TB ORDER BY SerialNo DESC";
+            SqlCommand cmd = new SqlCommand(query, connection);
+
+            try
+            {
+                var x = cmd.ExecuteScalar();
+                connection.Close();
+                return (int)x;
+            }
+            catch(Exception ex)
+            {
+                return 1;
+            }
+            
+        }
         public double CalculateUpdatedPrice(double discunt,double regularPrice)
         {
             return regularPrice - (discunt) / 100 * regularPrice;
@@ -105,6 +142,8 @@ namespace Program_Files.Admin_Panel
         {
             this.AddQuantiyValue();
             this.AddTableColumn();
+            serialNo = this.GetLastRowSerialNo();
+            this.dgvAddProduct.DataSource = dt;
         }
         
         internal void ShowModel(string selectedBrand)
@@ -288,27 +327,52 @@ namespace Program_Files.Admin_Panel
 
         }
 
+        internal void ClearAllField()
+        {
+            foreach(Control control in pnlFields.Controls)
+            {
+                if(control is TextBox)
+                {
+                    control.Text = string.Empty;    
+                }
+                else if(control is ComboBox)
+                {
+                    ComboBox comboBox = (ComboBox)control;
+                    comboBox.SelectedIndex = -1;
+                }
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (IsValid())
             {
                 try
-                {
-                    this.Serial = 1;
+                {                                      
+                    this.Serial = serialNo;
+                    serialNo++;
                     Random rn = new Random();
                     this.Barcode = rn.Next(10000, 100000).ToString();
                     double updatedPrice = this.CalculateUpdatedPrice(Convert.ToDouble(txtDiscount.Text), Convert.ToDouble(txtRegularPrices.Text));
 
-                    dt.Rows.Add(this.Serial, this.Barcode, cmbType.Text, cmbBrandName.Text, cmbModel.Text, cmbCapacity.Text, cmbFrequency.Text, cmbQuantity.Text, txtBuyingPrice.Text, txtDiscount.Text, txtRegularPrices.Text, updatedPrice.ToString(), cmbStatus.Text, dtpAssignDate.Text, "Munna");
+                    dt.Rows.Add(this.Barcode, cmbType.Text, cmbBrandName.Text, cmbModel.Text, cmbCapacity.Text, cmbFrequency.Text,cmbWarranty.Text, cmbQuantity.Text, txtBuyingPrice.Text,  txtRegularPrices.Text, txtDiscount.Text, updatedPrice.ToString(), cmbStatus.Text, dtpAssignDate.Text, "Munna");
                     dgvAddProduct.DataSource = dt;
+
+                    this.ClearAllField();
+
+                    
+
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
             else if (!IsValid())
             {
                 MessageBox.Show("Fill all the required Field");                
             }
+
+
             
 
         }
@@ -324,6 +388,92 @@ namespace Program_Files.Admin_Panel
         {
             this.Hide();
             this.adminDashboard.Visible  = true;
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            
+            if (dgvAddProduct.Rows.Count >1)
+            {
+                try
+                {
+
+                   
+                    for(int i = 0;i < dgvAddProduct.Rows.Count-1;i++) 
+                    {
+                        MessageBox.Show(dgvAddProduct.RowCount.ToString());
+                        MessageBox.Show(dgvAddProduct.Rows.Count.ToString());
+                        string query = "INSERT INTO Product2TB values(@barcode,@component,@brandName,@model,@capacity,@frequency,@warranty,@quantity,@buyingPrice,@regularPrice,@discount,@updatedPrice,@status,@addedBy,@assignDate,@outOfStock)";
+
+                        connection.Open();
+                        SqlCommand sqlCommand = new SqlCommand(query, connection);
+                        DataGridViewRow row = dgvAddProduct.Rows[i];
+                        MessageBox.Show(row.Cells[0].Value.ToString());
+                        
+
+                        sqlCommand.Parameters.AddWithValue("@barcode", row.Cells["Barcode"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@component", row.Cells["Component"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@brandName", row.Cells["BrandName"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@model", row.Cells["Model"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@capacity", row.Cells["Capacity"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@frequency", row.Cells["Frequency"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@warranty", Convert.ToInt32(row.Cells["Warranty"].Value));
+                        sqlCommand.Parameters.AddWithValue("@quantity", Convert.ToInt32(row.Cells["Quantity"].Value));
+                        sqlCommand.Parameters.AddWithValue("@buyingPrice", Convert.ToInt32(row.Cells["buying Price"].Value));
+                        sqlCommand.Parameters.AddWithValue("@regularPrice", Convert.ToInt32(row.Cells["Regular Price"].Value));
+                        sqlCommand.Parameters.AddWithValue("@discount", Convert.ToInt32(row.Cells["Discount"].Value));
+                        sqlCommand.Parameters.AddWithValue("@updatedPrice", Convert.ToInt32(row.Cells["Updated Price"].Value));
+                        sqlCommand.Parameters.AddWithValue("@status", row.Cells["Status"].Value.ToString());
+                        sqlCommand.Parameters.AddWithValue("@assignDate", row.Cells["Assign Date"].Value.ToString()) ;
+                        sqlCommand.Parameters.AddWithValue("@addedBy", row.Cells["Added By"].Value.ToString());
+
+                        if (Convert.ToInt32(row.Cells["Quantity"].Value) > 5)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@outOfStock", 0);
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@outOfStock", 1);
+                        }
+                      
+                        sqlCommand.ExecuteNonQuery();                       
+                        connection.Close();
+                        
+                
+                    }
+
+                    MessageBox.Show("All Products are Inserted To DataBase Successfully!!!");
+                    ((DataTable)dgvAddProduct.DataSource).Clear();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("No Data Available for Insert");
+            }
+
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             
         }
     }

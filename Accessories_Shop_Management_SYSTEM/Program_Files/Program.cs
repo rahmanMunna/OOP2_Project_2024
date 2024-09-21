@@ -1,5 +1,6 @@
 ﻿using Program_Files.Admin_Panel;
 using Program_Files.Dashboard;
+using Program_Files.Employee_Panel;
 using Program_Files.Login_Panel;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace Program_Files
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginFrame());
+            Application.Run(new SellProduct());
         }
     }
 }

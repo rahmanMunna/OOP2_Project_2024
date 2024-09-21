@@ -30,6 +30,8 @@
         {
             this.pnlFields = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbWarranty = new System.Windows.Forms.ComboBox();
+            this.lblWarranty = new System.Windows.Forms.Label();
             this.pnlAdditional = new System.Windows.Forms.Panel();
             this.lblFrequency = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,9 +58,9 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
             this.pnlFields.SuspendLayout();
             this.pnlAdditional.SuspendLayout();
@@ -72,6 +74,8 @@
             this.pnlFields.AutoSize = true;
             this.pnlFields.BackColor = System.Drawing.Color.FloralWhite;
             this.pnlFields.Controls.Add(this.btnAdd);
+            this.pnlFields.Controls.Add(this.cmbWarranty);
+            this.pnlFields.Controls.Add(this.lblWarranty);
             this.pnlFields.Controls.Add(this.pnlAdditional);
             this.pnlFields.Controls.Add(this.label6);
             this.pnlFields.Controls.Add(this.dtpAssignDate);
@@ -109,6 +113,38 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // cmbWarranty
+            // 
+            this.cmbWarranty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWarranty.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWarranty.FormattingEnabled = true;
+            this.cmbWarranty.Items.AddRange(new object[] {
+            "1",
+            "10",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cmbWarranty.Location = new System.Drawing.Point(187, 372);
+            this.cmbWarranty.Name = "cmbWarranty";
+            this.cmbWarranty.Size = new System.Drawing.Size(133, 29);
+            this.cmbWarranty.Sorted = true;
+            this.cmbWarranty.TabIndex = 23;
+            // 
+            // lblWarranty
+            // 
+            this.lblWarranty.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarranty.Location = new System.Drawing.Point(182, 317);
+            this.lblWarranty.Name = "lblWarranty";
+            this.lblWarranty.Size = new System.Drawing.Size(159, 29);
+            this.lblWarranty.TabIndex = 23;
+            this.lblWarranty.Text = "Warranty(Yr)";
+            this.lblWarranty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlAdditional
             // 
@@ -206,8 +242,9 @@
             // 
             // dtpAssignDate
             // 
+            this.dtpAssignDate.CustomFormat = "dd/MM/yyyy";
             this.dtpAssignDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAssignDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAssignDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpAssignDate.Location = new System.Drawing.Point(522, 372);
             this.dtpAssignDate.Name = "dtpAssignDate";
             this.dtpAssignDate.Size = new System.Drawing.Size(189, 32);
@@ -216,11 +253,12 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(280, 317);
+            this.label5.Location = new System.Drawing.Point(348, 314);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 29);
+            this.label5.Size = new System.Drawing.Size(157, 29);
             this.label5.TabIndex = 17;
             this.label5.Text = "Status";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // cmbStatus
             // 
@@ -231,11 +269,12 @@
             "Available",
             "In Stock",
             "Upcomming"});
-            this.cmbStatus.Location = new System.Drawing.Point(285, 375);
+            this.cmbStatus.Location = new System.Drawing.Point(353, 372);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(178, 29);
+            this.cmbStatus.Size = new System.Drawing.Size(149, 29);
             this.cmbStatus.Sorted = true;
             this.cmbStatus.TabIndex = 16;
+            this.cmbStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStatus_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -253,7 +292,7 @@
             this.cmbQuantity.FormattingEnabled = true;
             this.cmbQuantity.Location = new System.Drawing.Point(51, 375);
             this.cmbQuantity.Name = "cmbQuantity";
-            this.cmbQuantity.Size = new System.Drawing.Size(178, 29);
+            this.cmbQuantity.Size = new System.Drawing.Size(100, 29);
             this.cmbQuantity.TabIndex = 14;
             // 
             // label3
@@ -321,6 +360,7 @@
             // 
             // cmbModel
             // 
+            this.cmbModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModel.FormattingEnabled = true;
             this.cmbModel.Location = new System.Drawing.Point(524, 117);
@@ -340,6 +380,7 @@
             // 
             // cmbBrandName
             // 
+            this.cmbBrandName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBrandName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbBrandName.FormattingEnabled = true;
             this.cmbBrandName.Location = new System.Drawing.Point(285, 117);
@@ -404,14 +445,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dgvAddProduct);
             this.panel1.Location = new System.Drawing.Point(799, 106);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(742, 698);
+            this.panel1.Size = new System.Drawing.Size(755, 698);
             this.panel1.TabIndex = 1;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnConfirm.Location = new System.Drawing.Point(242, 423);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(110, 48);
+            this.btnConfirm.TabIndex = 26;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // button3
             // 
@@ -431,32 +485,21 @@
             this.button2.BackColor = System.Drawing.Color.Red;
             this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(376, 468);
+            this.button2.Location = new System.Drawing.Point(405, 423);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 48);
             this.button2.TabIndex = 24;
             this.button2.Text = "DELETE";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.button1.Location = new System.Drawing.Point(234, 468);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 48);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dgvAddProduct
             // 
             this.dgvAddProduct.BackgroundColor = System.Drawing.Color.CadetBlue;
             this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAddProduct.Location = new System.Drawing.Point(24, 45);
+            this.dgvAddProduct.Location = new System.Drawing.Point(0, 47);
             this.dgvAddProduct.Name = "dgvAddProduct";
-            this.dgvAddProduct.Size = new System.Drawing.Size(695, 315);
+            this.dgvAddProduct.Size = new System.Drawing.Size(749, 315);
             this.dgvAddProduct.TabIndex = 0;
             // 
             // AddProduct
@@ -471,7 +514,7 @@
             this.MaximizeBox = false;
             this.Name = "AddProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddProduct";
+            this.Text = " Add New Product";
             this.Load += new System.EventHandler(this.AddProduct_Load);
             this.pnlFields.ResumeLayout(false);
             this.pnlFields.PerformLayout();
@@ -516,7 +559,9 @@
         private System.Windows.Forms.ComboBox cmbCapacity;
         private System.Windows.Forms.DataGridView dgvAddProduct;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblWarranty;
+        private System.Windows.Forms.ComboBox cmbWarranty;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }
