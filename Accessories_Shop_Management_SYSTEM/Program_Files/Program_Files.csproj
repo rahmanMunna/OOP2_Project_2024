@@ -71,14 +71,13 @@
       <DependentUpon>ManageProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\ComponentList.cs" />
-    <Compile Include="Classes\DataBase.cs" />
+    <Compile Include="Classes\DBAccess.cs" />
     <Compile Include="Dashboard\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\DBConnection.cs" />
     <Compile Include="Employee Panel\PrintOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +178,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\icons8-admin-96.png" />
+    <None Include="Resources\icons8-cross-ezgif.com-resize.gif" />
+    <None Include="Resources\icons8-search.gif" />
+    <None Include="Resources\icons8-search-ezgif.com-resize.gif" />
+    <None Include="Resources\icons8-search1.gif" />
+    <None Include="Resources\icons8-search-32.png" />
+    <None Include="Resources\icons8-refresh-32.png" />
+    <None Include="Resources\icons8-reload-32.png" />
     <Content Include="Resources\Logout.png" />
     <Content Include="Resources\Profile.png" />
     <Content Include="Resources\Search Property.png" />

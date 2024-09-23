@@ -268,7 +268,7 @@
             this.cmbStatus.Items.AddRange(new object[] {
             "Available",
             "In Stock",
-            "Upcomming"});
+            "UpComming"});
             this.cmbStatus.Location = new System.Drawing.Point(353, 372);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(149, 29);
@@ -497,9 +497,9 @@
             // 
             this.dgvAddProduct.BackgroundColor = System.Drawing.Color.CadetBlue;
             this.dgvAddProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAddProduct.Location = new System.Drawing.Point(0, 47);
+            this.dgvAddProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvAddProduct.Name = "dgvAddProduct";
-            this.dgvAddProduct.Size = new System.Drawing.Size(749, 315);
+            this.dgvAddProduct.Size = new System.Drawing.Size(752, 318);
             this.dgvAddProduct.TabIndex = 0;
             // 
             // AddProduct

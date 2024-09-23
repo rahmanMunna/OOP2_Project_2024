@@ -497,6 +497,7 @@ namespace Program_Files.Classes
             
         };
         }
+
         //internal void Print()
         //{
         //    foreach (var series in amdProcessors)

@@ -226,6 +226,7 @@ namespace Program_Files.Admin_Panel
                 }
             }
         }
+       
         internal void ShowBrandName(string selectedItem)
         {
             cmbBrandName.SelectedIndex = -1;
