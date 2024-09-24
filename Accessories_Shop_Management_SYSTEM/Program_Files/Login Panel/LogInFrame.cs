@@ -1,5 +1,4 @@
-﻿using Program_Files.Dashboard;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,83 +7,85 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Program_Files.Classes;
 
 namespace Program_Files.Login_Panel
 {
     public partial class LoginFrame : Form
     {
+        private User user;
+
+        private string Password {  get; set; }
+        private string UserId { get; set; }
+
+        private string Role {  get; set; }  
         public LoginFrame()
         {
             InitializeComponent();
-        }
-
-        private void LOGIN_Load(object sender, EventArgs e)
-        {
             
-        }
+        } 
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
+            this.UserId = txtUserId.Text;   
+            this.Password = txtPassword.Text;
 
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelName_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SignIn_Pass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SignIn_Pass.Checked)
+            try
             {
-                textPass.UseSystemPasswordChar = false;
+                if(this.UserId.Length > 0 && this.Password.Length > 0 )
+                {
+                    string query = "select password,role, from UserTB where userid = '" + this.UserId + "'";
+                    DataTable table = DBAccess.ExecuteQuery(query);
+                    
+                    if (table.Rows.Count > 0)
+                    {
+                        this.Role = table.Rows[0][1].ToString();
+                        if (table.Rows[0][0].ToString() == this.Password)
+                        {
+                            MessageBox.Show("Login SuccesFull");
+                            if (Role == "Admin")
+                            {
+                                MessageBox.Show("You are Admin");
+                            }
+                            else
+                            {
+                                MessageBox.Show("You are Employee");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Passworrd");
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Invalid User ID");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Fill all the required Field");
+                }
             }
-            else 
+            catch (Exception ex) { }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(txtPassword.UseSystemPasswordChar)
             {
-                textPass.UseSystemPasswordChar = true;
+                txtPassword.UseSystemPasswordChar = false;
             }
-             
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void buttonSignIn_Click(object sender, EventArgs e)
-        {
-            new AdminDashboard(this).Show();
-            this.Hide();
+            else
+            {
+                txtPassword.UseSystemPasswordChar= true;    
+            }
         }
     }
 }

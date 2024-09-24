@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvPrintOrderList = new System.Windows.Forms.DataGridView();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlOrderList = new System.Windows.Forms.Panel();
             this.lblShowGrandTotal = new System.Windows.Forms.Label();
             this.lblShowTotalDiscount = new System.Windows.Forms.Label();
@@ -39,16 +43,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlCustomerInfo = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbBkash = new System.Windows.Forms.RadioButton();
+            this.rbCard = new System.Windows.Forms.RadioButton();
             this.rbCash = new System.Windows.Forms.RadioButton();
             this.lblPayment = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrintOrderList)).BeginInit();
             this.pnlOrderList.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,11 +67,43 @@
             this.dgvPrintOrderList.AllowUserToDeleteRows = false;
             this.dgvPrintOrderList.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dgvPrintOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrintOrderList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.Quantity,
+            this.TotalPrice,
+            this.TotalDiscount});
             this.dgvPrintOrderList.Location = new System.Drawing.Point(24, 23);
             this.dgvPrintOrderList.Name = "dgvPrintOrderList";
             this.dgvPrintOrderList.ReadOnly = true;
             this.dgvPrintOrderList.Size = new System.Drawing.Size(940, 364);
             this.dgvPrintOrderList.TabIndex = 0;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ProductName.HeaderText = "Product Name";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalPrice.HeaderText = "TotalPrice";
+            this.TotalPrice.Name = "TotalPrice";
+            this.TotalPrice.ReadOnly = true;
+            // 
+            // TotalDiscount
+            // 
+            this.TotalDiscount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TotalDiscount.HeaderText = "Total DIscount";
+            this.TotalDiscount.Name = "TotalDiscount";
+            this.TotalDiscount.ReadOnly = true;
             // 
             // pnlOrderList
             // 
@@ -161,11 +199,11 @@
             // pnlCustomerInfo
             // 
             this.pnlCustomerInfo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pnlCustomerInfo.Controls.Add(this.radioButton3);
-            this.pnlCustomerInfo.Controls.Add(this.radioButton2);
+            this.pnlCustomerInfo.Controls.Add(this.rbBkash);
+            this.pnlCustomerInfo.Controls.Add(this.rbCard);
             this.pnlCustomerInfo.Controls.Add(this.rbCash);
             this.pnlCustomerInfo.Controls.Add(this.lblPayment);
-            this.pnlCustomerInfo.Controls.Add(this.txtPhone);
+            this.pnlCustomerInfo.Controls.Add(this.txtPhoneNumber);
             this.pnlCustomerInfo.Controls.Add(this.txtCustomerName);
             this.pnlCustomerInfo.Controls.Add(this.lblPhone);
             this.pnlCustomerInfo.Controls.Add(this.lblCustomerName);
@@ -174,33 +212,33 @@
             this.pnlCustomerInfo.Size = new System.Drawing.Size(342, 496);
             this.pnlCustomerInfo.TabIndex = 5;
             // 
-            // radioButton3
+            // rbBkash
             // 
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton3.Image = global::Program_Files.Properties.Resources.BKash__1_;
-            this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton3.Location = new System.Drawing.Point(119, 447);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(109, 27);
-            this.radioButton3.TabIndex = 14;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Bkash";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbBkash.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbBkash.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbBkash.Image = global::Program_Files.Properties.Resources.BKash__1_;
+            this.rbBkash.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbBkash.Location = new System.Drawing.Point(119, 447);
+            this.rbBkash.Name = "rbBkash";
+            this.rbBkash.Size = new System.Drawing.Size(109, 27);
+            this.rbBkash.TabIndex = 14;
+            this.rbBkash.TabStop = true;
+            this.rbBkash.Text = "Bkash";
+            this.rbBkash.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbCard
             // 
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton2.Image = global::Program_Files.Properties.Resources.icons8_card_32;
-            this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.Location = new System.Drawing.Point(185, 399);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(112, 27);
-            this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Card";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbCard.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCard.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.rbCard.Image = global::Program_Files.Properties.Resources.icons8_card_32;
+            this.rbCard.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbCard.Location = new System.Drawing.Point(185, 399);
+            this.rbCard.Name = "rbCard";
+            this.rbCard.Size = new System.Drawing.Size(112, 27);
+            this.rbCard.TabIndex = 13;
+            this.rbCard.TabStop = true;
+            this.rbCard.Text = "Card";
+            this.rbCard.UseVisualStyleBackColor = true;
             // 
             // rbCash
             // 
@@ -225,14 +263,14 @@
             this.lblPayment.TabIndex = 11;
             this.lblPayment.Text = "Payment Mehtode";
             // 
-            // txtPhone
+            // txtPhoneNumber
             // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(45, 254);
-            this.txtPhone.Multiline = true;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(252, 44);
-            this.txtPhone.TabIndex = 10;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(45, 254);
+            this.txtPhoneNumber.Multiline = true;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(252, 44);
+            this.txtPhoneNumber.TabIndex = 10;
             // 
             // txtCustomerName
             // 
@@ -287,12 +325,33 @@
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // dtpOrderDate
+            // 
+            this.dtpOrderDate.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpOrderDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpOrderDate.Location = new System.Drawing.Point(1158, 127);
+            this.dtpOrderDate.Name = "dtpOrderDate";
+            this.dtpOrderDate.Size = new System.Drawing.Size(235, 22);
+            this.dtpOrderDate.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1091, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Date :";
+            // 
             // PrintOrderList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1458, 790);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpOrderDate);
             this.Controls.Add(this.pnlCustomerInfo);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
@@ -309,6 +368,7 @@
             this.pnlCustomerInfo.ResumeLayout(false);
             this.pnlCustomerInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -329,11 +389,17 @@
         private System.Windows.Forms.Panel pnlCustomerInfo;
         private System.Windows.Forms.Label lblCustomerName;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label lblPayment;
         private System.Windows.Forms.RadioButton rbCash;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbCard;
+        private System.Windows.Forms.RadioButton rbBkash;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalDiscount;
+        private System.Windows.Forms.DateTimePicker dtpOrderDate;
+        private System.Windows.Forms.Label label1;
     }
 }

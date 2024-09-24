@@ -70,8 +70,11 @@
     <Compile Include="Admin Panel\ManageProduct.Designer.cs">
       <DependentUpon>ManageProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Admin.cs" />
+    <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\ComponentList.cs" />
     <Compile Include="Classes\DBAccess.cs" />
+    <Compile Include="Classes\User.cs" />
     <Compile Include="Dashboard\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +188,11 @@
     <None Include="Resources\icons8-search-32.png" />
     <None Include="Resources\icons8-refresh-32.png" />
     <None Include="Resources\icons8-reload-32.png" />
+    <None Include="Resources\LogIN2.jpg" />
+    <None Include="Resources\icons8-user-96.png" />
+    <None Include="Resources\icons8-password-96.png" />
+    <None Include="Resources\icons8-password-32.png" />
+    <None Include="Resources\icons8-cross-ezgif.com-resize1.gif" />
     <Content Include="Resources\Logout.png" />
     <Content Include="Resources\Profile.png" />
     <Content Include="Resources\Search Property.png" />

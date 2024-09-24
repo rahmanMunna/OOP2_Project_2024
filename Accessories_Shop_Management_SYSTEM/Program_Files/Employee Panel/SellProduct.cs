@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -12,12 +13,20 @@ namespace Program_Files.Employee_Panel
     {
         private DataTable dt1 = new DataTable();
         private DataTable dt2= new DataTable();
-        private DataTable passDataTable= new DataTable();
+        private DataTable passTable = new DataTable();
 
+        internal Dictionary<string, int> UpdatedProductList = new Dictionary<string, int>();     
         internal int TotalOrederPrice {  get; set; }   
         internal int TotalGotDiscount {  get; set; }    
         internal int TotalQuantity {  get; set; }
         internal int GrandTotal {  get; set; }  
+
+        
+        internal int SerialNumber { get; set; }
+        
+
+        
+
 
         private string ProductName
         {
@@ -33,8 +42,7 @@ namespace Program_Files.Employee_Panel
             this.TotalQuantity = 0;
             this.GrandTotal = 0;
             this.TotalGotDiscount = 0;
-
-
+            this.SerialNumber  = 0; 
 
         }
 
@@ -77,6 +85,14 @@ namespace Program_Files.Employee_Panel
             this.lblShowDiscount.Text = this.TotalGotDiscount.ToString();
             this.lblShowGrandTotal.Text = this.GrandTotal.ToString();
         }
+
+        private void PopulatePassTableColumn()
+        {
+            passTable.Columns.Add("Name");
+            passTable.Columns.Add("Quantity");
+            passTable.Columns.Add("Totgal Price");
+            passTable.Columns.Add("Total Discount");
+        }
        
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -84,6 +100,8 @@ namespace Program_Files.Employee_Panel
             {
                 if (cmbQuantity.Text.Length > 0)
                 {
+                    this.SerialNumber = SerialNumber + 1;
+
                     int index = dgvShowProduct.CurrentCell.RowIndex;
                     DataGridViewRow selectedRow = dgvShowProduct.Rows[index];
                     this.ProductName = selectedRow.Cells["ComponentName"].Value + "-" + selectedRow.Cells["BrandName"].Value + "-" + selectedRow.Cells["Model"].Value;
@@ -100,11 +118,14 @@ namespace Program_Files.Employee_Panel
                         int totalPrice = Convert.ToInt32(selectedRow.Cells["RegularPrice"].Value) * quantity;
                         selectedRow.Cells["Quantity"].Value = (availableQuantity - quantity);
 
-                    
+                        this.UpdatedProductList.Add(selectedRow.Cells["Barcode"].Value.ToString(), (availableQuantity - quantity));
+
+                        
+
                         //creating a new row
                         int rowIndex = dgvShowOrderList.Rows.Add();
                         
-                        dgvShowOrderList.Rows[rowIndex].Cells[0].Value = "1";
+                        dgvShowOrderList.Rows[rowIndex].Cells[0].Value = this.SerialNumber.ToString();
                         dgvShowOrderList.Rows[rowIndex].Cells[1].Value = selectedRow.Cells["Barcode"].Value.ToString();
                         dgvShowOrderList.Rows[rowIndex].Cells[2].Value = this.ProductName;
                         dgvShowOrderList.Rows[rowIndex].Cells[3].Value = quantity.ToString();
@@ -123,8 +144,6 @@ namespace Program_Files.Employee_Panel
                         //show to label
                         this.ShowTotal();
                         
-                       
-
 
                     }
                     else
@@ -188,25 +207,42 @@ namespace Program_Files.Employee_Panel
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
         {
-            if(dgvShowOrderList.Rows.Count > 0)
+            try
             {
-                foreach (DataGridViewRow row in dgvShowOrderList.Rows)
+                if (dgvShowOrderList.Rows.Count > 0)
                 {
-                    string name = row.Cells["pName"].Value.ToString();
-                    int quantity = Convert.ToInt32(row.Cells["pQuantity"].Value);
-                    int price = Convert.ToInt32(row.Cells["PricePerUnit"].Value) * quantity;
-                    int discount = Convert.ToInt32(row.Cells["TotalDiscount"].Value);
+                    this.PopulatePassTableColumn();
 
-                    //passDataTable.Rows.Add(name.ToString(),quantity.ToString(),price.ToString(),discount.ToString());
+                    foreach (DataGridViewRow row in dgvShowOrderList.Rows)
+                    {
+                        string name = row.Cells["pName"].Value.ToString();
+                        int quantity = Convert.ToInt32(row.Cells["pQuantity"].Value);
+                        int price = Convert.ToInt32(row.Cells["PricePerUnit"].Value) * quantity;
+                        int discount = Convert.ToInt32(row.Cells["TotalDiscount"].Value);
+
+                        
+                        passTable.Rows.Add(name.ToString(),quantity.ToString(),price.ToString(),discount.ToString());
+
+                    }
+
+
+
+                    new PrintOrderList(this, passTable, TotalOrederPrice, TotalGotDiscount, GrandTotal).Show();
+                    this.Hide();
                 }
-            }
 
-            else
-            {
-                MessageBox.Show("No Product has been Selected");
+                else
+                {
+                    MessageBox.Show("No Product has been Selected");
+                }
+
+                   
             }
-            //new PrintOrderList(this,passDataTable).Visible = true;
-            //this.Visible = false;
+            catch(Exception ex) {
+            
+                MessageBox.Show(ex.Message);
+            } 
+            
         }
 
 
@@ -254,6 +290,11 @@ namespace Program_Files.Employee_Panel
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SellProduct_Load(object sender, EventArgs e)
         {
 
         }

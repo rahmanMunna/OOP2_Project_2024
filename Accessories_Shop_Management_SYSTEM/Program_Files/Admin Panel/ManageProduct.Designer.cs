@@ -47,10 +47,8 @@
             this.AddedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AssignDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OutOfStockStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAddProduct = new System.Windows.Forms.Button();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnEnter = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -87,7 +85,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -255,48 +252,27 @@
             this.OutOfStockStatus.Name = "OutOfStockStatus";
             this.OutOfStockStatus.ReadOnly = true;
             // 
-            // btnAddProduct
+            // btnEdit
             // 
-            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddProduct.Location = new System.Drawing.Point(45, 13);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(158, 46);
-            this.btnAddProduct.TabIndex = 1;
-            this.btnAddProduct.Text = "Add Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
-            // 
-            // btnUpdateProduct
-            // 
-            this.btnUpdateProduct.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateProduct.Location = new System.Drawing.Point(350, 13);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(257, 46);
-            this.btnUpdateProduct.TabIndex = 2;
-            this.btnUpdateProduct.Text = "Update Information";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
-            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(1124, 681);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(68, 35);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // btnRemove
             // 
             this.btnRemove.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemove.Location = new System.Drawing.Point(743, 13);
+            this.btnRemove.Location = new System.Drawing.Point(556, 705);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(234, 46);
+            this.btnRemove.Size = new System.Drawing.Size(108, 37);
             this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Remove Product";
+            this.btnRemove.Text = "Remove ";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnAddProduct);
-            this.panel2.Controls.Add(this.btnUpdateProduct);
-            this.panel2.Controls.Add(this.btnRemove);
-            this.panel2.Location = new System.Drawing.Point(33, 706);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 70);
-            this.panel2.TabIndex = 5;
             // 
             // btnEnter
             // 
@@ -666,6 +642,8 @@
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1433, 831);
             this.Controls.Add(this.btnReload);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.pnlUpdateInfo);
@@ -679,16 +657,15 @@
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.Name = "ManageProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageProduct";
+            this.Load += new System.EventHandler(this.ManageProduct_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -704,11 +681,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvProductList;
-        private System.Windows.Forms.Button btnAddProduct;
-        private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtFrom;

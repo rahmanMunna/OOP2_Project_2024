@@ -171,7 +171,7 @@ namespace Program_Files.Admin_Panel
                 if(dgvProductList.Rows.Count > 0)
                 {
                     this.pnlUpdateInfo.Enabled = true;
-                    this.btnUpdateProduct.Enabled = false;
+                    this.btnEdit.Enabled = false;
                     this.PopulateQuantity();
 
                     int index = dgvProductList.CurrentCell.RowIndex;
@@ -194,7 +194,7 @@ namespace Program_Files.Admin_Panel
         private void btnEnter_Click(object sender, EventArgs e)
         {
             this.pnlUpdateInfo.Enabled = false;
-            this.btnUpdateProduct.Enabled = true;
+            this.btnEdit.Enabled = true;
 
             try
             {
@@ -267,13 +267,18 @@ namespace Program_Files.Admin_Panel
         private void btnReload_Click(object sender, EventArgs e)
         {
             this.pnlUpdateInfo.Enabled = false;
-            this.btnUpdateProduct.Enabled = true;
+            this.btnEdit.Enabled = true;
 
             this.cmbBrandName.SelectedIndex = -1;
             this.cmbModel.SelectedIndex = -1;
             this.cmbComponent.SelectedIndex = -1;
 
             this.PopulateGridView();
+        }
+
+        private void ManageProduct_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
