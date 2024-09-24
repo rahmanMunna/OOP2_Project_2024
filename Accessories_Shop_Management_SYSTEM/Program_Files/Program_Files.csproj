@@ -81,6 +81,12 @@
     <Compile Include="Dashboard\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee Panel\EmployeeDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee Panel\EmployeeDashboard.Designer.cs">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee Panel\PrintOrderList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee Panel\EmployeeDashboard.resx">
+      <DependentUpon>EmployeeDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee Panel\PrintOrderList.resx">
       <DependentUpon>PrintOrderList.cs</DependentUpon>
@@ -193,6 +202,7 @@
     <None Include="Resources\icons8-password-96.png" />
     <None Include="Resources\icons8-password-32.png" />
     <None Include="Resources\icons8-cross-ezgif.com-resize1.gif" />
+    <None Include="Resources\icons8-notification.gif" />
     <Content Include="Resources\Logout.png" />
     <Content Include="Resources\Profile.png" />
     <Content Include="Resources\Search Property.png" />

@@ -34,29 +34,27 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlImg = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblRequest = new System.Windows.Forms.Label();
             this.pbUpdatePass = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.pnlUpdatePassword = new System.Windows.Forms.Panel();
+            this.btnConfirmPass = new System.Windows.Forms.Button();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtOldPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.pnlImg.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpdatePass)).BeginInit();
+            this.pnlUpdatePassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -85,7 +83,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(195, 33);
             this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -112,48 +109,6 @@
             this.pnlContent.Size = new System.Drawing.Size(509, 338);
             this.pnlContent.TabIndex = 2;
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(253, 105);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(195, 33);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 33);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "New Password";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(253, 165);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(195, 33);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 165);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(234, 33);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Confirm Password";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // btnConfirm
             // 
             this.btnConfirm.BackColor = System.Drawing.Color.FloralWhite;
@@ -168,6 +123,46 @@
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = false;
             // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(253, 165);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(195, 33);
+            this.textBox3.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(234, 33);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Confirm Password";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(253, 105);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(195, 33);
+            this.textBox2.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.label2.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(186, 33);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "New Password";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // pnlImg
             // 
             this.pnlImg.Controls.Add(this.pbUpdatePass);
@@ -176,43 +171,53 @@
             this.pnlImg.Size = new System.Drawing.Size(524, 388);
             this.pnlImg.TabIndex = 3;
             // 
-            // panel2
+            // pbUpdatePass
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(542, 100);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(535, 388);
-            this.panel2.TabIndex = 2;
+            this.pbUpdatePass.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbUpdatePass.ErrorImage")));
+            this.pbUpdatePass.Image = global::Program_Files.Properties.Resources.Online_Security_2;
+            this.pbUpdatePass.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbUpdatePass.InitialImage")));
+            this.pbUpdatePass.Location = new System.Drawing.Point(16, 29);
+            this.pbUpdatePass.Name = "pbUpdatePass";
+            this.pbUpdatePass.Size = new System.Drawing.Size(508, 332);
+            this.pbUpdatePass.TabIndex = 0;
+            this.pbUpdatePass.TabStop = false;
             // 
-            // button2
+            // pnlUpdatePassword
             // 
-            this.button2.BackColor = System.Drawing.Color.FloralWhite;
-            this.button2.Enabled = false;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Crimson;
-            this.button2.Location = new System.Drawing.Point(200, 263);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 48);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Confirm";
-            this.button2.UseVisualStyleBackColor = false;
+            this.pnlUpdatePassword.Controls.Add(this.btnConfirmPass);
+            this.pnlUpdatePassword.Controls.Add(this.txtConfirmPassword);
+            this.pnlUpdatePassword.Controls.Add(this.label4);
+            this.pnlUpdatePassword.Controls.Add(this.txtNewPassword);
+            this.pnlUpdatePassword.Controls.Add(this.label5);
+            this.pnlUpdatePassword.Controls.Add(this.txtOldPassword);
+            this.pnlUpdatePassword.Controls.Add(this.label6);
+            this.pnlUpdatePassword.Location = new System.Drawing.Point(542, 100);
+            this.pnlUpdatePassword.Name = "pnlUpdatePassword";
+            this.pnlUpdatePassword.Size = new System.Drawing.Size(535, 388);
+            this.pnlUpdatePassword.TabIndex = 2;
             // 
-            // textBox4
+            // btnConfirmPass
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(253, 165);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(256, 33);
-            this.textBox4.TabIndex = 6;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.btnConfirmPass.BackColor = System.Drawing.Color.FloralWhite;
+            this.btnConfirmPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmPass.ForeColor = System.Drawing.Color.Crimson;
+            this.btnConfirmPass.Location = new System.Drawing.Point(200, 263);
+            this.btnConfirmPass.Name = "btnConfirmPass";
+            this.btnConfirmPass.Size = new System.Drawing.Size(109, 48);
+            this.btnConfirmPass.TabIndex = 7;
+            this.btnConfirmPass.Text = "Confirm";
+            this.btnConfirmPass.UseVisualStyleBackColor = false;
+            this.btnConfirmPass.Click += new System.EventHandler(this.btnconfirm_Click);
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(253, 165);
+            this.txtConfirmPassword.Multiline = true;
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(256, 33);
+            this.txtConfirmPassword.TabIndex = 6;
             // 
             // label4
             // 
@@ -225,15 +230,14 @@
             this.label4.Text = "Confirm Password";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // txtNewPassword
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(253, 105);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 33);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPassword.Location = new System.Drawing.Point(253, 105);
+            this.txtNewPassword.Multiline = true;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(253, 33);
+            this.txtNewPassword.TabIndex = 4;
             // 
             // label5
             // 
@@ -246,15 +250,14 @@
             this.label5.Text = "New Password";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox6
+            // txtOldPassword
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(253, 47);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(256, 33);
-            this.textBox6.TabIndex = 2;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtOldPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOldPassword.Location = new System.Drawing.Point(253, 47);
+            this.txtOldPassword.Multiline = true;
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.Size = new System.Drawing.Size(256, 33);
+            this.txtOldPassword.TabIndex = 2;
             // 
             // label6
             // 
@@ -267,56 +270,19 @@
             this.label6.Text = "Old Password";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button1.Image = global::Program_Files.Properties.Resources.icons8_back_button_32_2;
-            this.button1.Location = new System.Drawing.Point(18, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 48);
-            this.button1.TabIndex = 8;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // lblRequest
-            // 
-            this.lblRequest.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.lblRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRequest.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRequest.ForeColor = System.Drawing.Color.Violet;
-            this.lblRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblRequest.Location = new System.Drawing.Point(852, 41);
-            this.lblRequest.Name = "lblRequest";
-            this.lblRequest.Size = new System.Drawing.Size(172, 33);
-            this.lblRequest.TabIndex = 8;
-            this.lblRequest.Text = "Send Request";
-            this.lblRequest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pbUpdatePass
-            // 
-            this.pbUpdatePass.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pbUpdatePass.ErrorImage")));
-            this.pbUpdatePass.Image = global::Program_Files.Properties.Resources.Online_Security_2;
-            this.pbUpdatePass.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbUpdatePass.InitialImage")));
-            this.pbUpdatePass.Location = new System.Drawing.Point(13, 29);
-            this.pbUpdatePass.Name = "pbUpdatePass";
-            this.pbUpdatePass.Size = new System.Drawing.Size(508, 332);
-            this.pbUpdatePass.TabIndex = 0;
-            this.pbUpdatePass.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.button3.Image = global::Program_Files.Properties.Resources.icons8_right_arrow_ezgif_com_resize_2;
-            this.button3.Location = new System.Drawing.Point(1030, 32);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 48);
-            this.button3.TabIndex = 9;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnBack.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnBack.Image = global::Program_Files.Properties.Resources.icons8_back_button_32_2;
+            this.btnBack.Location = new System.Drawing.Point(18, 27);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(64, 48);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // UpdatePassword
             // 
@@ -324,11 +290,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1082, 500);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblRequest);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlImg);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlUpdatePassword);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.panel1);
             this.Name = "UpdatePassword";
@@ -339,9 +303,9 @@
             this.pnlContent.ResumeLayout(false);
             this.pnlContent.PerformLayout();
             this.pnlImg.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpdatePass)).EndInit();
+            this.pnlUpdatePassword.ResumeLayout(false);
+            this.pnlUpdatePassword.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -360,16 +324,14 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Panel pnlImg;
         private System.Windows.Forms.PictureBox pbUpdatePass;
-        private System.Windows.Forms.Label lblRequest;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Panel pnlUpdatePassword;
+        private System.Windows.Forms.Button btnConfirmPass;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button3;
     }
 }

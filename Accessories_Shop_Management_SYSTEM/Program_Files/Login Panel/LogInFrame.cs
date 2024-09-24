@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program_Files.Classes;
+using Program_Files.Dashboard;
+using Program_Files.Employee_Panel;
 
 namespace Program_Files.Login_Panel
 {
@@ -18,6 +20,7 @@ namespace Program_Files.Login_Panel
         private string Password {  get; set; }
         private string UserId { get; set; }
 
+        private string UserName { get; set; }   
         private string Role {  get; set; }  
         public LoginFrame()
         {
@@ -34,22 +37,30 @@ namespace Program_Files.Login_Panel
             {
                 if(this.UserId.Length > 0 && this.Password.Length > 0 )
                 {
-                    string query = "select password,role, from UserTB where userid = '" + this.UserId + "'";
+                    string query = "select password,role,firstName,lastName from UserTB where userid = '" + this.UserId + "'";
                     DataTable table = DBAccess.ExecuteQuery(query);
                     
                     if (table.Rows.Count > 0)
                     {
+                        this.UserName = table.Rows[0]["firstName"].ToString() +" "+ table.Rows[0]["lastName"].ToString();
+                        
                         this.Role = table.Rows[0][1].ToString();
                         if (table.Rows[0][0].ToString() == this.Password)
                         {
-                            MessageBox.Show("Login SuccesFull");
+                           
                             if (Role == "Admin")
                             {
-                                MessageBox.Show("You are Admin");
+                                MessageBox.Show("Login successfull");
+                                user = new Admin(this.UserId,this.UserName,this.Password);
+                                new AdminDashboard(this,user).Show();
+                                this.Hide();
                             }
                             else
                             {
-                                MessageBox.Show("You are Employee");
+                                MessageBox.Show("Login successfull");
+                                user = new Employee(this.UserId, this.UserName, this.Password);
+                                new EmployeeDashboard(this,user).Show();
+                                this.Hide();
                             }
                         }
                         else
@@ -86,6 +97,11 @@ namespace Program_Files.Login_Panel
             {
                 txtPassword.UseSystemPasswordChar= true;    
             }
+        }
+
+        private void lblUserId_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

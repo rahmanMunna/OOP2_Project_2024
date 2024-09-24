@@ -25,6 +25,11 @@ namespace Program_Files.Admin_Panel
         private AdminDashboard adminDashboard;
         private int serialNo;
         //private Random random = new Random();
+        private string product {  get; set; }
+        private string ExistingProductBarcode { get; set; } 
+        private string ExistingProductQuantity { get; set; }
+
+        
 
         private SqlConnection connection = new SqlConnection("Data Source=MUNNA\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True");
 
@@ -71,12 +76,7 @@ namespace Program_Files.Admin_Panel
            
         }
 
-        //internal void Exist(params string[]value)
-        //{
-        //    connection.Open();
-        //    string query = "SELECT ComponentName,BrandName,Model,Capacity,Frequency FROM Product2TB WHERE ComponentName = @componen";
-        //    SqlCommand cmd = new SqlCommand();
-        //}
+        
         internal int GetLastRowSerialNo()
         {
 
@@ -343,24 +343,94 @@ namespace Program_Files.Admin_Panel
                 }
             }
         }
+
+       
+        private bool IsExist()
+        {
+            bool exist = false;
+
+            dynamic query = "";
+            if (cmbType.Text != "RAM" && cmbType.Text != "SSD")
+
+            {
+                product = cmbType.Text + "-" + cmbBrandName.Text + "-" + cmbModel.Text;
+                query = "SELECT barcode,quantity, CONCAT(ComponentName, '-', BrandName, '-', Model) AS ProductName FROM Product2TB where CONCAT(ComponentName, '-', BrandName, '-', Model ) = '" + product + "' ";
+
+            }
+            else if (cmbType.Text != "RAM")
+            {
+                product = cmbType.Text + "-" + cmbBrandName.Text + "-" + cmbModel.Text + "-" + cmbCapacity.Text + "-" + cmbFrequency.Text;
+                query = "SELECT barcode,quantity, CONCAT(ComponentName, '-', BrandName, '-', Model,'-',Capacity,'-',Frequency) AS ProductName FROM Product2TB where CONCAT(ComponentName, '-', BrandName, '-', Model,'-',Capacity,'-',Frequency) = '" + product + "' ";
+
+            }
+            else if (cmbType.Text != "SSD")
+            {
+                product = cmbType.Text + "-" + cmbBrandName.Text + "-" + cmbModel.Text + "-" + cmbCapacity.Text;
+                query = "SELECT barcode,quantity, CONCAT(ComponentName, '-', BrandName, '-', Model,'-',Capacity) AS ProductName FROM Product2TB where CONCAT(ComponentName, '-', BrandName, '-', Model,'-',Capacity) = '" + product + "' ";
+
+            }
+
+            DataTable table = DBAccess.ExecuteQuery(query);
+            if (table.Rows.Count > 0)
+            {
+               exist = true;
+               this.ExistingProductBarcode = table.Rows[0][0].ToString();
+               this.ExistingProductQuantity = table.Rows[0][1].ToString();
+                
+            }
+            return exist;
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (IsValid())
             {
                 try
-                {                                      
-                    this.Serial = serialNo;
-                    serialNo++;
-                    Random rn = new Random();
-                    this.Barcode = rn.Next(10000, 100000).ToString();
+                {
                     double updatedPrice = this.CalculateUpdatedPrice(Convert.ToDouble(txtDiscount.Text), Convert.ToDouble(txtRegularPrices.Text));
+                    if (!IsExist())
+                    {
 
-                    dt.Rows.Add(this.Barcode, cmbType.Text, cmbBrandName.Text, cmbModel.Text, cmbCapacity.Text, cmbFrequency.Text,cmbWarranty.Text, cmbQuantity.Text, txtBuyingPrice.Text,  txtRegularPrices.Text, txtDiscount.Text, updatedPrice.ToString(), cmbStatus.Text, dtpAssignDate.Text, "Munna");
-                    dgvAddProduct.DataSource = dt;
+                        MessageBox.Show("Not Exist");
+                        this.Serial = serialNo;
+                        serialNo++;
+                        Random rn = new Random();
+                        this.Barcode = rn.Next(10000, 100000).ToString();
+                        
 
-                    this.ClearAllField();
+                        dt.Rows.Add(this.Barcode, cmbType.Text, cmbBrandName.Text, cmbModel.Text, cmbCapacity.Text, cmbFrequency.Text, cmbWarranty.Text, cmbQuantity.Text, txtBuyingPrice.Text, txtRegularPrices.Text, txtDiscount.Text, updatedPrice.ToString(), cmbStatus.Text, dtpAssignDate.Text, this.adminDashboard.User.UserName);
+                        dgvAddProduct.DataSource = dt;
 
-                    
+                        this.ClearAllField();
+
+                    }
+
+                    else if(IsExist())
+                    {
+                        int finalQuantity = Convert.ToInt32(this.ExistingProductQuantity)+Convert.ToInt32(txtDiscount.Text);
+                        MessageBox.Show("The Product is Already Exist in the Inventory ");
+                        string query = "";
+                        if(finalQuantity > 5)
+                        {
+                             query = "Update Product2TB set capacity = '" + cmbCapacity.Text + "', frequency ='" + cmbFrequency.Text + "' , warranty = " + Convert.ToInt32(cmbWarranty.Text) + " , quantity = " + finalQuantity + ", buyingPrice =" + Convert.ToInt32(txtBuyingPrice.Text) + " , regularPrice =" + Convert.ToInt32(txtRegularPrices.Text) + " , discount = " + Convert.ToInt32(txtDiscount.Text) + " , updatedPrice =" + (int)updatedPrice + " ,status = '" + cmbStatus.Text + "' ,outOfStockStatus = 0 Where barcode = '"+this.ExistingProductBarcode+"' ";
+                        }
+                        else
+                        {
+                             query = "Update Product2TB set capacity = '" + cmbCapacity.Text + "', frequency ='" + cmbFrequency.Text + "' , warranty = " + Convert.ToInt32(cmbWarranty.Text) + " , quantity = " + finalQuantity + ", buyingPrice =" + Convert.ToInt32(txtBuyingPrice.Text) + " , regularPrice =" + Convert.ToInt32(txtRegularPrices.Text) + " , discount = " + Convert.ToInt32(txtDiscount.Text) + " , updatedPrice =" + (int)updatedPrice + " ,status = '" + cmbStatus.Text + "' ,outOfStockStatus = 1 Where barcode = '"+this.ExistingProductBarcode+"' ";
+                        }
+
+                        int rowAffected = DBAccess.ExecuteDMLQuery(query);
+
+                        if(rowAffected == 1)
+                        {
+                            MessageBox.Show("Product has been updated");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Product Couldn't been updated");
+                        }
+
+                        this.ClearAllField();
+                    }
 
                 }
                 catch (Exception ex) {

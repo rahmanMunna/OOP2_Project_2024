@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program_Files.Classes;
 using Program_Files.Classes;
+using Program_Files.Dashboard;
 
 
 namespace Program_Files.Admin_Panel
@@ -18,6 +19,8 @@ namespace Program_Files.Admin_Panel
     {
         private SqlConnection connection = new SqlConnection("Data Source=MUNNA\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True");
         private DataTable table = new DataTable();
+
+        private AdminDashboard adminDashboard;
         
         
         public ManageProduct()
@@ -25,6 +28,11 @@ namespace Program_Files.Admin_Panel
             InitializeComponent();
             this.PopulateGridView();
             this.PopulateComponentComboBox();
+        }
+
+        public ManageProduct(dynamic adminDashBoard) : this()
+        {
+            this.adminDashboard = adminDashBoard;
         }
 
         private void PopulateGridView(string query = "Select * from Product2TB")
@@ -279,6 +287,12 @@ namespace Program_Files.Admin_Panel
         private void ManageProduct_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            //this.adminDashboard().Show();
+            //this.Hide();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Program_Files.Employee_Panel
         
         internal int SerialNumber { get; set; }
         
-
+        internal dynamic EmployeeDashboard { get; set; }
         
 
 
@@ -44,6 +44,11 @@ namespace Program_Files.Employee_Panel
             this.TotalGotDiscount = 0;
             this.SerialNumber  = 0; 
 
+        }
+
+        public SellProduct(dynamic dashboard) : this()
+        {
+            this.EmployeeDashboard = dashboard;
         }
 
         private void PopulateGridView(string query = "SELECT SerialNo,Barcode,ComponentName,BrandName,Model,Capacity,Frequency,Status,Quantity,RegularPrice,Discount,UpdatedPrice FROM Product2TB WHERE Status = 'Available';")
@@ -295,6 +300,17 @@ namespace Program_Files.Employee_Panel
         }
 
         private void SellProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            new EmployeeDashboard().Show();
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

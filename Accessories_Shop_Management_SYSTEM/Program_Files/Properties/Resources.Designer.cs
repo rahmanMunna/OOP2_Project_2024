@@ -163,6 +163,16 @@ namespace Program_Files.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_notification {
+            get {
+                object obj = ResourceManager.GetObject("icons8-notification", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_password_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-32", resourceCulture);

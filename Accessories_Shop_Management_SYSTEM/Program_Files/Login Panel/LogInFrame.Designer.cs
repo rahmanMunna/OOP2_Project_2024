@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUserId = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -39,8 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,6 +57,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1350, 64);
             this.panel1.TabIndex = 11;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Wheat;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnClose.Image = global::Program_Files.Properties.Resources.icons8_cross_ezgif1;
+            this.btnClose.Location = new System.Drawing.Point(1293, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(46, 45);
+            this.btnClose.TabIndex = 20;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblTitle
             // 
@@ -82,6 +94,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(864, 625);
             this.panel3.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Program_Files.Properties.Resources.LogIN2;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(864, 625);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // txtUserId
             // 
@@ -143,6 +165,7 @@
             this.label2.Size = new System.Drawing.Size(164, 40);
             this.label2.TabIndex = 16;
             this.label2.Text = "Password";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblUserId
             // 
@@ -153,29 +176,8 @@
             this.lblUserId.Size = new System.Drawing.Size(185, 77);
             this.lblUserId.TabIndex = 14;
             this.lblUserId.Text = "User ID";
-            this.lblUserId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Program_Files.Properties.Resources.LogIN2;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(864, 625);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Wheat;
-            this.btnClose.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.btnClose.Image = global::Program_Files.Properties.Resources.icons8_cross_ezgif1;
-            this.btnClose.Location = new System.Drawing.Point(1293, 8);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(46, 45);
-            this.btnClose.TabIndex = 20;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.lblUserId.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblUserId.Click += new System.EventHandler(this.lblUserId_Click);
             // 
             // LoginFrame
             // 

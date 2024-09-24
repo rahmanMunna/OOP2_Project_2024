@@ -1,4 +1,5 @@
 ﻿using Program_Files.Admin_Panel;
+using Program_Files.Classes;
 using Program_Files.Login_Panel;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Program_Files.Dashboard
     public partial class AdminDashboard : Form
     {
         private Button btnAddEmployee;
-        private Button ViewBtn;
+        private Button btnManageProduct;
         private Button logoutBtn;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
@@ -24,13 +25,17 @@ namespace Program_Files.Dashboard
         private Button CrossBtn;
         private Label label1;
         private LoginFrame loginFrame;
+        internal dynamic User {  get; set; }    
+
         public AdminDashboard()
         {
             InitializeComponent();
         }
-        public AdminDashboard(LoginFrame loginFrame) : this()
+        public AdminDashboard(LoginFrame loginFrame,dynamic user) : this()
         {
             this.loginFrame = loginFrame;
+            this.User = user;
+            this.lblUserName.Text = this.User.UserName;
         }
 
 
@@ -40,9 +45,32 @@ namespace Program_Files.Dashboard
             Application.Exit();
         }
 
+        private void CheckNotificatino()
+        {
+            try
+            {
+                string query = "Select UpdatePasswordRequestStatus from UserTB where userid = 'A-Rahman-6' ";
+                int status = Convert.ToInt32(DBAccess.ExecuteQuery(query).Rows[0][0]);
+
+
+                if (status == 1)
+                {
+                    btnNotification.Text = "1";
+                    this.btnNotification.Enabled = true;
+                }
+                else
+                {
+                    btnNotification.Text = "0";
+                    this.btnNotification.Enabled = false;
+                }
+            }
+            catch (Exception ex) { }
+            
+
+        }
         private void DashBoard_Load(object sender, EventArgs e)
         {
-
+            this.CheckNotificatino();
         }
 
         private void ViewBtn_Click(object sender, EventArgs e)
@@ -59,12 +87,42 @@ namespace Program_Files.Dashboard
         private void logoutBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.loginFrame.Visible = true;
+            this.loginFrame.Show();
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             new AddEmployee(this).Visible = true;   
+            this.Hide();
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = "SELECT CONCAT(ComponentName, '-', BrandName, '-', Model) AS ProductName FROM Product2TB where OutOfStockStatus = 1";
+                DataTable dt = DBAccess.ExecuteQuery(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    string name = "";
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        name = name + row["ProductName"].ToString() + ", ";
+                    }
+                    MessageBox.Show(name + " Is Ruuning out Of Stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("All Products are in Good ", "Exclamatory", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex) { }
+        }
+
+        private void btnManageProduct_Click(object sender, EventArgs e)
+        {
+            new ManageProduct(this).Show(); 
             this.Hide();
         }
     }
