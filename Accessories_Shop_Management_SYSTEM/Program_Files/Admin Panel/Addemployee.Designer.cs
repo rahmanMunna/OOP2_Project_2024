@@ -443,7 +443,7 @@
             // 
             this.EmpDataGrd.BackgroundColor = System.Drawing.Color.LightCyan;
             this.EmpDataGrd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmpDataGrd.Location = new System.Drawing.Point(425, 184);
+            this.EmpDataGrd.Location = new System.Drawing.Point(427, 175);
             this.EmpDataGrd.Margin = new System.Windows.Forms.Padding(2);
             this.EmpDataGrd.Name = "EmpDataGrd";
             this.EmpDataGrd.RowHeadersWidth = 51;

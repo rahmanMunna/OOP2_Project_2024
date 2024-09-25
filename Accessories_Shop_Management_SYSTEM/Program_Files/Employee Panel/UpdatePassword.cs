@@ -13,38 +13,45 @@ namespace Program_Files.Employee_Panel
 {
     public partial class UpdatePassword : Form
     {
-        internal dynamic DashBoard {  get; set; }  
-        public UpdatePassword(dynamic board)
+        internal dynamic DashBoard {  get; set; }
+
+        public UpdatePassword()
         {
             InitializeComponent();
-            this.DashBoard = board;
+            
+        }
+        public UpdatePassword(dynamic dashboard) : this() 
+        {   
+            this.DashBoard = dashboard;
         }
 
         
 
-        private void UpdatePassword_Load(object sender, EventArgs e)
+        private void CLearAllField()
         {
-            
+            txtConfirmPassword.Text = string.Empty; 
+            txtNewPassword.Text = string.Empty; 
+            txtOldPassword.Text = string.Empty;
         }
-
         
         private void btnconfirm_Click(object sender, EventArgs e)
         {
             try
             {
-                string query = "Select Password from UserTB where userID = 'E-Maria-7'";
+                string query = "Select Password from UserTB where userID = '"+ this.DashBoard.UserId + "'";
                 string oldPassword = DBAccess.ExecuteQuery(query).Rows[0][0].ToString();
 
                 if (oldPassword == txtOldPassword.Text)
                 {
                     if (txtNewPassword.Text == txtConfirmPassword.Text)
                     {
-                        string query2 = "Update UserTB set password = '" + txtConfirmPassword.Text + "' where userID = 'E-Maria-7' ";
+                        string query2 = "Update UserTB set password = '" + txtConfirmPassword.Text + "' where userID = '"+this.DashBoard.UserId+ "' ";
                         int rowAffected = DBAccess.ExecuteDMLQuery(query2);
 
                         if (rowAffected == 1)
                         {
                             MessageBox.Show("Password has been Updated!");
+                            this.CLearAllField();
                         }
                         else
                         {
@@ -68,11 +75,16 @@ namespace Program_Files.Employee_Panel
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
-            this.Hide();
             this.DashBoard.Show();
+            this.Hide();
+            
 
             
+        }
+
+        private void UpdatePassword_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

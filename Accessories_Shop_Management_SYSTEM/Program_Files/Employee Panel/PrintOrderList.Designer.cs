@@ -75,6 +75,7 @@
             this.dgvPrintOrderList.Location = new System.Drawing.Point(24, 23);
             this.dgvPrintOrderList.Name = "dgvPrintOrderList";
             this.dgvPrintOrderList.ReadOnly = true;
+            this.dgvPrintOrderList.RowHeadersVisible = false;
             this.dgvPrintOrderList.Size = new System.Drawing.Size(940, 364);
             this.dgvPrintOrderList.TabIndex = 0;
             // 
@@ -358,6 +359,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlOrderList);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PrintOrderList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintOrderList";

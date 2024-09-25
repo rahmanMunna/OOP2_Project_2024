@@ -27,7 +27,7 @@ namespace Program_Files
             this.adminDashboard = adminDashboard;   
             //DisplayEmp();
         }
-        //readonly SqlConnection Con = new SqlConnection(connectionString: @"Data Source =(LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\HP\OneDrive\Microsoft Teams Chat Files\Documents\EmpTbl.mdf;Integrated Security = True; Connect Timeout = 30");
+        readonly SqlConnection Con = new SqlConnection(connectionString: @"Data Source =(LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\HP\OneDrive\Microsoft Teams Chat Files\Documents\EmpTbl.mdf;Integrated Security = True; Connect Timeout = 30");
 
         //private void DisplayEmp() 
         //{

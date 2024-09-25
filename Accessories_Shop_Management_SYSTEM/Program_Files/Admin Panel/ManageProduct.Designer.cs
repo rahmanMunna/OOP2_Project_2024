@@ -56,8 +56,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTo = new System.Windows.Forms.TextBox();
+            this.txtSearchByQuantity = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -79,7 +79,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSearchByProduct = new System.Windows.Forms.TextBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -310,12 +310,13 @@
             this.txtFrom.Name = "txtFrom";
             this.txtFrom.Size = new System.Drawing.Size(100, 40);
             this.txtFrom.TabIndex = 8;
+            this.txtFrom.TextChanged += new System.EventHandler(this.txtFrom_TextChanged);
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.lblTo);
             this.panel5.Controls.Add(this.lblFrom);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txtTo);
             this.panel5.Controls.Add(this.txtFrom);
             this.panel5.Location = new System.Drawing.Point(1061, 109);
             this.panel5.Name = "panel5";
@@ -340,23 +341,25 @@
             this.lblFrom.TabIndex = 10;
             this.lblFrom.Text = "From";
             // 
-            // textBox1
+            // txtTo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(228, 16);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 40);
-            this.textBox1.TabIndex = 9;
+            this.txtTo.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTo.Location = new System.Drawing.Point(228, 16);
+            this.txtTo.Multiline = true;
+            this.txtTo.Name = "txtTo";
+            this.txtTo.Size = new System.Drawing.Size(100, 40);
+            this.txtTo.TabIndex = 9;
+            this.txtTo.TextChanged += new System.EventHandler(this.txtTo_TextChanged);
             // 
-            // textBox2
+            // txtSearchByQuantity
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(852, 136);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(74, 29);
-            this.textBox2.TabIndex = 12;
+            this.txtSearchByQuantity.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByQuantity.Location = new System.Drawing.Point(852, 136);
+            this.txtSearchByQuantity.Multiline = true;
+            this.txtSearchByQuantity.Name = "txtSearchByQuantity";
+            this.txtSearchByQuantity.Size = new System.Drawing.Size(74, 29);
+            this.txtSearchByQuantity.TabIndex = 12;
+            this.txtSearchByQuantity.TextChanged += new System.EventHandler(this.txtSearchByQuantity_TextChanged);
             // 
             // lblSearch
             // 
@@ -589,14 +592,15 @@
             this.label8.TabIndex = 31;
             this.label8.Text = "Search By Product Name :\r\n\r\n";
             // 
-            // textBox3
+            // txtSearchByProduct
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(596, 135);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 29);
-            this.textBox3.TabIndex = 30;
+            this.txtSearchByProduct.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByProduct.Location = new System.Drawing.Point(596, 135);
+            this.txtSearchByProduct.Multiline = true;
+            this.txtSearchByProduct.Name = "txtSearchByProduct";
+            this.txtSearchByProduct.Size = new System.Drawing.Size(220, 29);
+            this.txtSearchByProduct.TabIndex = 30;
+            this.txtSearchByProduct.TextChanged += new System.EventHandler(this.txtSearchByProduct_TextChanged);
             // 
             // btnReload
             // 
@@ -646,7 +650,7 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtSearchByProduct);
             this.Controls.Add(this.pnlUpdateInfo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label3);
@@ -654,7 +658,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSearchByQuantity);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -689,10 +693,10 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtFrom;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTo;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label lblTo;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchByQuantity;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEnter;
@@ -733,7 +737,7 @@
         private System.Windows.Forms.ComboBox cmbWarranty;
         private System.Windows.Forms.ComboBox cmbQuantity;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSearchByProduct;
         private System.Windows.Forms.Button btnReload;
     }
 }

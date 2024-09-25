@@ -18,7 +18,7 @@ namespace Program_Files.Employee_Panel
     {
         private SellProduct Product
         { get; set; }  
-
+        private dynamic Dashboard { get; set; }
         
         private DataTable table {  get; set; }  
            
@@ -53,7 +53,7 @@ namespace Program_Files.Employee_Panel
         {
             
         }
-        public PrintOrderList(SellProduct product,DataTable recivedTable,int totalPrice,int totalDiscount,int grandTotal) : this()
+        public PrintOrderList(dynamic Dashboard,SellProduct product,DataTable recivedTable,int totalPrice,int totalDiscount,int grandTotal) : this()
         {
             this.Product = product;
             this.table = recivedTable;  
@@ -67,7 +67,11 @@ namespace Program_Files.Employee_Panel
             lblShowTotalDiscount.Text = this.BillDiscount.ToString();   
             lblShowGrandTotal.Text = this.GrandTotal.ToString();
 
+            this.Dashboard = Dashboard;
+
             this.PopulateGridView();    
+
+
            
 
         }
@@ -88,8 +92,8 @@ namespace Program_Files.Employee_Panel
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Product.Visible = true;
-            //this.Hide();
-            Application.Exit();
+            this.Hide();
+            //Application.Exit();
         }
 
         private void lblTotal_Click(object sender, EventArgs e)
@@ -120,12 +124,14 @@ namespace Program_Files.Employee_Panel
                 string date = dtpOrderDate.Text;
 
                 Document document = new Document();
-                PdfWriter.GetInstance(document, new FileStream("D:/Invoice.pdf", FileMode.Create));
+                PdfWriter.GetInstance(document, new FileStream("D:/C#_Project_2024/Accessories_Shop_Management_SYSTEM/Invoice Reports/"+this.InvoiceId+".pdf", FileMode.Create));
                 document.Open();
+                Paragraph pTitle = new Paragraph("Invoice Id : "+this.InvoiceId+"\n\n");
                 Paragraph p = new Paragraph("==========================================================================\n\n");
-                Paragraph p1 = new Paragraph("Customer Name : " + this.CustomerName + "\n\n" + "Customer Phone Number : " + this.CustomerPhoneNUmber + "\n\n" + "Payment Method : " + this.PaymentMethod + "\n\n" + "Date : " + date + "\n\n\n");
+                Paragraph p1 = new Paragraph("Customer Name : " + this.CustomerName + "\n\n" + "Customer Phone Number : " + this.CustomerPhoneNUmber + "\n\n" + "Payment Method : " + this.PaymentMethod + "\n\n" + "Date : " + date + "\n\n"+"Sales Person : "+this.Dashboard.user.UserName+"\n\n"+"Bill Prepared By : "+this.Dashboard.user.UserName+"\n\n\n");
                 Paragraph p3 = new Paragraph("---------------------------  Product Name - Quantity - Total Price - Total Discount------------------------\n\n");
 
+                document.Add(pTitle);
                 document.Add(p);
                 document.Add(p1);
                 document.Add(p3);
@@ -165,8 +171,8 @@ namespace Program_Files.Employee_Panel
 
             try
             {
-                this.GenerateReport();
-                string query = "Select top 1 serialNo from InvoiceTb order By serialNo";
+               
+                string query = "Select top 1 serialNo from InvoiceTb order By serialNo DESC";
 
 
                 DataTable table = DBAccess.ExecuteQuery(query);
@@ -176,7 +182,11 @@ namespace Program_Files.Employee_Panel
                 int randomNumber = random.Next(2000, 50000);
                 this.InvoiceId = randomNumber.ToString();
 
-                string query2 = "insert into InvoiceTb values('" + this.InvoiceId + "','Mahima Rahman','Paid'," + this.BillPrice + "," + this.BillDiscount + "," + this.GrandTotal + ",'" + dtpOrderDate.Text + "','" + this.CompanyName + "','" + this.CustomerName + "','Chandrima Dam','" + this.PaymentMethod + "') ;";
+                this.GenerateReport();
+
+
+
+                string query2 = "insert into InvoiceTb values('" + this.InvoiceId + "','"+this.Dashboard.user.UserName+"','Paid'," + this.BillPrice + "," + this.BillDiscount + "," + this.GrandTotal + ",'" + dtpOrderDate.Text + "','" + this.CustomerName + "','" + this.CustomerPhoneNUmber + "','"+this.Dashboard.user.UserName+"','" + this.PaymentMethod + "') ;";
                 int rowAffected = DBAccess.ExecuteDMLQuery(query2);
 
                 if (rowAffected > 0)
@@ -203,10 +213,14 @@ namespace Program_Files.Employee_Panel
                     MessageBox.Show("Unabled to Insert to DataBase");
                 }
 
-                Application.Exit();
+                Product.Visible = true;
+                this.Hide();
             }
 
-            catch (Exception ex) { }
+            catch (Exception ex) {
+            
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Program_Files.Admin_Panel;
 using Program_Files.Classes;
+using Program_Files.Employee_Panel;
 using Program_Files.Login_Panel;
 using System;
 using System.Collections.Generic;
@@ -122,7 +123,13 @@ namespace Program_Files.Dashboard
 
         private void btnManageProduct_Click(object sender, EventArgs e)
         {
-            new ManageProduct(this).Show(); 
+            //new ManageProduct(this).Show(); 
+            this.Hide();
+        }
+
+        private void btnUpdatePasword_Click(object sender, EventArgs e)
+        {
+            new UpdatePassword(this).Show();
             this.Hide();
         }
     }

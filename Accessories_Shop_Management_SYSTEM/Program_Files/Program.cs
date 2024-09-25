@@ -20,7 +20,7 @@ namespace Program_Files
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginFrame());
+            Application.Run(new ManageProduct());
         }
     }
 }

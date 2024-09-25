@@ -294,5 +294,80 @@ namespace Program_Files.Admin_Panel
             //this.adminDashboard().Show();
             //this.Hide();
         }
+
+        private void txtSearchByProduct_TextChanged(object sender, EventArgs e)
+        {
+            string query = "select * from Product2TB where CONCAT(ComponentName,BrandName,model) like '%"+txtSearchByProduct.Text+"%' ;";
+            this.PopulateGridView(query);
+        }
+
+        private void txtSearchByQuantity_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txtSearchByQuantity.Text.Length != 0)
+                {
+                    string query = "Select * from Product2TB where quantity >= " + Convert.ToInt32(txtSearchByQuantity.Text) + " ;";
+                    this.PopulateGridView(query);
+                }
+                else
+                {
+                    
+                    this.PopulateGridView();
+                }
+            }
+            catch (Exception ex) { }
+        }
+
+        private void txtFrom_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtFrom.Text.Length != 0)
+                {
+                    string query = "Select * from Product2TB where updatedPrice >= " + Convert.ToInt32(txtFrom.Text) + " ;";
+                    this.PopulateGridView(query);
+                }
+                else
+                {
+
+                    this.PopulateGridView();
+                }
+                
+
+            }
+            catch (Exception ex) { }
+        }
+
+        private void txtTo_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtFrom.Text.Length != 0)
+                {
+                    if (txtTo.Text.Length != 0)
+                    {
+                        string query = "Select * from Product2TB where updatedPrice <= " + Convert.ToInt32(txtTo.Text) + "and updatedPrice >=  "+Convert.ToInt32(txtFrom.Text)+" ;";
+                        this.PopulateGridView(query);
+                    }
+                    else
+                    {
+
+                        string query = "Select * from Product2TB where updatedPrice >= " + Convert.ToInt32(txtFrom.Text) + " ;";
+                        this.PopulateGridView(query);
+                    }
+
+                }
+                else
+                {
+                    this.PopulateGridView();
+                    MessageBox.Show("Enter Starting Price First");
+                    txtTo.Text = string.Empty;      
+                }
+
+
+            }
+            catch (Exception ex) { }
+        }
     }
 }

@@ -15,8 +15,8 @@ namespace Program_Files.Login_Panel
 {
     public partial class LoginFrame : Form
     {
-        private User user;
 
+        private User user;
         private string Password {  get; set; }
         private string UserId { get; set; }
 
@@ -51,16 +51,19 @@ namespace Program_Files.Login_Panel
                             if (Role == "Admin")
                             {
                                 MessageBox.Show("Login successfull");
-                                user = new Admin(this.UserId,this.UserName,this.Password);
+                                 user = new Admin(this.UserId,this.UserName,this.Password);
                                 new AdminDashboard(this,user).Show();
                                 this.Hide();
                             }
-                            else
+                            else if(Role == "Employee")
                             {
-                                MessageBox.Show("Login successfull");
-                                user = new Employee(this.UserId, this.UserName, this.Password);
-                                new EmployeeDashboard(this,user).Show();
+                                
+                                user = new Admin(this.UserId, this.UserName, this.Password);
+                                MessageBox.Show("Login successfull-" + this.UserName + "");
+                                new EmployeeDashBoard(this, user).Show();
+                                
                                 this.Hide();
+                                
                             }
                         }
                         else
@@ -79,7 +82,10 @@ namespace Program_Files.Login_Panel
                     MessageBox.Show("Please Fill all the required Field");
                 }
             }
-            catch (Exception ex) { }
+            
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);    
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Program_Files.Classes;
+using Program_Files.Login_Panel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,48 +9,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Program_Files.Employee_Panel;
-using Program_Files.Login_Panel;
 
 namespace Program_Files.Employee_Panel
 {
-    public partial class EmployeeDashboard : Form
+    public partial class EmployeeDashBoard : Form
     {
-        private dynamic loginFrame;
-        private dynamic user; 
-        public EmployeeDashboard()
+        private LoginFrame loginFrame;
+        public User user;
+        public EmployeeDashBoard()
         {
             InitializeComponent();
         }
-        public EmployeeDashboard(dynamic loginFrame,dynamic user) : this() 
+        public EmployeeDashBoard(LoginFrame login,User user) : this()
         {
-            this.loginFrame = loginFrame;
+            this.loginFrame = login;
             this.user = user;
-            this.lblShowName.Text = user.Username;
+            this.lblUserName.Text = "Welcome " + this.user.UserName;
+        }
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeeDashBoard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTitle_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BtnProductList_Click(object sender, EventArgs e)
         {
             new SellProduct(this).Show();
+            this.Hide();    
+        }
+
+        private void btnUpdatePassword_Click(object sender, EventArgs e)
+        {
+            new UpdatePassword(this).Show();    
             this.Hide();
         }
 
-        private void BtnUpdatePass_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            new UpdatePassword(this).Show();
+            this.loginFrame.Show(); 
             this.Hide();
-
-        }
-
-        private void BtnLogOut_Click(object sender, EventArgs e)
-        {
-            new LoginFrame().Show();
-            this.Hide();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

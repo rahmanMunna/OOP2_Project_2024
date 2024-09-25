@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Program_Files.Classes
 {
-    internal class User
+    public class User
     {
         internal string UserId { get; set; }    
         internal string UserName { get; set; }

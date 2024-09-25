@@ -42,12 +42,15 @@
             this.pnlImg = new System.Windows.Forms.Panel();
             this.pbUpdatePass = new System.Windows.Forms.PictureBox();
             this.pnlUpdatePassword = new System.Windows.Forms.Panel();
-            this.btnConfirmPass = new System.Windows.Forms.Button();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.btnConfirmPass = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -55,6 +58,9 @@
             this.pnlImg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUpdatePass)).BeginInit();
             this.pnlUpdatePassword.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -184,17 +190,68 @@
             // 
             // pnlUpdatePassword
             // 
+            this.pnlUpdatePassword.Controls.Add(this.flowLayoutPanel1);
+            this.pnlUpdatePassword.Controls.Add(this.flowLayoutPanel2);
+            this.pnlUpdatePassword.Controls.Add(this.flowLayoutPanel3);
             this.pnlUpdatePassword.Controls.Add(this.btnConfirmPass);
-            this.pnlUpdatePassword.Controls.Add(this.txtConfirmPassword);
             this.pnlUpdatePassword.Controls.Add(this.label4);
-            this.pnlUpdatePassword.Controls.Add(this.txtNewPassword);
             this.pnlUpdatePassword.Controls.Add(this.label5);
-            this.pnlUpdatePassword.Controls.Add(this.txtOldPassword);
             this.pnlUpdatePassword.Controls.Add(this.label6);
             this.pnlUpdatePassword.Location = new System.Drawing.Point(542, 100);
             this.pnlUpdatePassword.Name = "pnlUpdatePassword";
             this.pnlUpdatePassword.Size = new System.Drawing.Size(535, 388);
             this.pnlUpdatePassword.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.txtOldPassword);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(256, 45);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(253, 35);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
+            // txtOldPassword
+            // 
+            this.txtOldPassword.Location = new System.Drawing.Point(3, 3);
+            this.txtOldPassword.Multiline = true;
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.Size = new System.Drawing.Size(250, 30);
+            this.txtOldPassword.TabIndex = 18;
+            this.txtOldPassword.UseSystemPasswordChar = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.txtConfirmPassword);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(256, 163);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(253, 35);
+            this.flowLayoutPanel2.TabIndex = 22;
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(3, 3);
+            this.txtConfirmPassword.Multiline = true;
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 30);
+            this.txtConfirmPassword.TabIndex = 18;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.txtNewPassword);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(256, 103);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(253, 35);
+            this.flowLayoutPanel3.TabIndex = 22;
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.Location = new System.Drawing.Point(3, 3);
+            this.txtNewPassword.Multiline = true;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Size = new System.Drawing.Size(250, 30);
+            this.txtNewPassword.TabIndex = 18;
+            this.txtNewPassword.UseSystemPasswordChar = true;
             // 
             // btnConfirmPass
             // 
@@ -210,34 +267,16 @@
             this.btnConfirmPass.UseVisualStyleBackColor = false;
             this.btnConfirmPass.Click += new System.EventHandler(this.btnconfirm_Click);
             // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(253, 165);
-            this.txtConfirmPassword.Multiline = true;
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(256, 33);
-            this.txtConfirmPassword.TabIndex = 6;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 165);
+            this.label4.Location = new System.Drawing.Point(13, 166);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(234, 33);
             this.label4.TabIndex = 5;
             this.label4.Text = "Confirm Password";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPassword.Location = new System.Drawing.Point(253, 105);
-            this.txtNewPassword.Multiline = true;
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Size = new System.Drawing.Size(253, 33);
-            this.txtNewPassword.TabIndex = 4;
             // 
             // label5
             // 
@@ -249,15 +288,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "New Password";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtOldPassword
-            // 
-            this.txtOldPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOldPassword.Location = new System.Drawing.Point(253, 47);
-            this.txtOldPassword.Multiline = true;
-            this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.Size = new System.Drawing.Size(256, 33);
-            this.txtOldPassword.TabIndex = 2;
             // 
             // label6
             // 
@@ -305,7 +335,12 @@
             this.pnlImg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbUpdatePass)).EndInit();
             this.pnlUpdatePassword.ResumeLayout(false);
-            this.pnlUpdatePassword.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -327,11 +362,14 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Panel pnlUpdatePassword;
         private System.Windows.Forms.Button btnConfirmPass;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNewPassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtOldPassword;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.TextBox txtNewPassword;
     }
 }

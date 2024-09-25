@@ -232,7 +232,7 @@ namespace Program_Files.Employee_Panel
 
 
 
-                    new PrintOrderList(this, passTable, TotalOrederPrice, TotalGotDiscount, GrandTotal).Show();
+                    new PrintOrderList(EmployeeDashboard, this, passTable, TotalOrederPrice, TotalGotDiscount, GrandTotal).Show();
                     this.Hide();
                 }
 
@@ -306,7 +306,7 @@ namespace Program_Files.Employee_Panel
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            new EmployeeDashboard().Show();
+            this.EmployeeDashboard.Show();
             this.Hide();
         }
 

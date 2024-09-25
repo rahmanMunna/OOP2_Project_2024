@@ -29,5 +29,6 @@ D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\it
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\BouncyCastle.Cryptography.xml
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\bin\Debug\itextsharp.xml
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_.475AF680.Up2Date
-D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ManageProduct.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.EmployeeDashboard.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ManageEmployee.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ManageProduct.resources
