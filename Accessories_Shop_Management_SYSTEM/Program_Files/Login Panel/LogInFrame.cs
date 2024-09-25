@@ -50,8 +50,8 @@ namespace Program_Files.Login_Panel
                            
                             if (Role == "Admin")
                             {
-                                MessageBox.Show("Login successfull");
-                                 user = new Admin(this.UserId,this.UserName,this.Password);
+                                MessageBox.Show("Login successfull-" + this.UserName + "");
+                                user = new Admin(this.UserId,this.UserName,this.Password);
                                 new AdminDashboard(this,user).Show();
                                 this.Hide();
                             }
@@ -65,6 +65,9 @@ namespace Program_Files.Login_Panel
                                 this.Hide();
                                 
                             }
+
+                            txtPassword.Text = string.Empty;
+                            txtUserId.Text = string.Empty;
                         }
                         else
                         {

@@ -291,8 +291,8 @@ namespace Program_Files.Admin_Panel
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            //this.adminDashboard().Show();
-            //this.Hide();
+            this.adminDashboard.Show();
+            this.Hide();
         }
 
         private void txtSearchByProduct_TextChanged(object sender, EventArgs e)

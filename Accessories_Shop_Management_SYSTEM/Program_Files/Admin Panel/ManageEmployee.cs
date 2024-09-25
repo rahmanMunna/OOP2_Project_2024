@@ -19,18 +19,23 @@ namespace Program_Files.Admin_Panel
         private SqlConnection Con = new SqlConnection("Data Source=SHUVRO\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True;Encrypt=False");
         private DataTable table = new DataTable();
 
+        private string Id {  get; set; }    
+
         private AdminDashboard adminDashboard;
         public ManageEmployee()
         {
             InitializeComponent();
-
+            this.pnlEdit.Enabled = false;
             this.PopulateGridview();
             dgvShowEmployee.AutoGenerateColumns = false;
+
         }
-        //private SqlConnection connection = new SqlConnection("Data Source=SHUVRO\\SQLEXPRESS;Initial Catalog=Accessories_Management_Shop;Integrated Security=True;Encrypt=False");
 
-
-
+        public ManageEmployee(dynamic dashboard) : this()
+        {
+            this.adminDashboard = dashboard;
+        }
+       
         private void PopulateGridview(string query = "Select UserID,FirstName,LastName,Email,PhoneNumber,Nid,Gender,Age,Dob,JoiningDate,Salary,Address,ASsignedBy from UserTB where Role = 'Employee' ")
         {
             DataTable dt = DBAccess.ExecuteQuery(query);
@@ -44,85 +49,135 @@ namespace Program_Files.Admin_Panel
             this.adminDashboard.Show();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+       
+        private void CLearAllField()
         {
+            foreach(Control control in pnlEdit.Controls)
+            {
+                if(control is TextBox)
+                {
+                    control.Text = string.Empty;
+                }
+            }
+        }
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+
+                if (dgvShowEmployee.Rows.Count > 0)
+                {
+                    
+                    string query = "update UserTB set FirstName = '" + FnameTxt.Text + "',LastName = '" + LnameTxt.Text + "',email = '" + EmailTxt.Text + "',PhoneNumber = '" + PhoneTxt.Text + "',Salary = " + Convert.ToInt32(SalTxt.Text) + ",Address = '" + AddressTxt.Text + "' where UserId = '" + this.Id + "'";
+                    int rowAffected = DBAccess.ExecuteDMLQuery(query);
+
+                    if (rowAffected > 0)
+                    {
+                        MessageBox.Show("Information Updated Succesfully");
+                        this.PopulateGridview();
+                        this.pnlEdit.Enabled = false;
+                        this.CLearAllField();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Information Can't be updated");
+                    }
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show("No Product Available to Update");
+                }
+            }
+
+            catch (Exception ex) { }
 
         }
 
-        private void EditBtn_Click(object sender, EventArgs e)
+       
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
                 if (dgvShowEmployee.Rows.Count > 0)
                 {
-                    this.panel1.Enabled = true;
-                    this.EditBtn.Enabled = false;
+                    this.pnlEdit.Enabled = true;
+                    this.btnEdit.Enabled = false;
 
 
                     int index = dgvShowEmployee.CurrentCell.RowIndex;
 
-                    int firstname = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["First Name"].Value);
-                    int lastname = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Last Name"].Value);
-                    int email = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Email"].Value);
-                    int phoneno = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Phone Number"].Value);
+                    this.Id = dgvShowEmployee.Rows[index].Cells["UserId"].Value.ToString();
 
-                    int gender = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Gender"].Value);
-                    int dob = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["DOB"].Value);
-                    int joindate = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Joindate"].Value);
-                    int Salary = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Salary"].Value);
-                    int address = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Address"].Value);
-                    int age = Convert.ToInt32(dgvShowEmployee.Rows[index].Cells["Age"].Value);
+                    FnameTxt.Text = dgvShowEmployee.Rows[index].Cells["FirstName"].Value.ToString();
+                    LnameTxt.Text = dgvShowEmployee.Rows[index].Cells["LastName"].Value.ToString();
+                    EmailTxt.Text = dgvShowEmployee.Rows[index].Cells["Email"].Value.ToString();
+                    PhoneTxt.Text = dgvShowEmployee.Rows[index].Cells["PhoneNumber"].Value.ToString();
+                    AddressTxt.Text = dgvShowEmployee.Rows[index].Cells["Address"].Value.ToString();
+                    SalTxt.Text = dgvShowEmployee.Rows[index].Cells["Salary"].Value.ToString();
 
-
-                    FnameTxt.Text = firstname.ToString();
-                    LnameTxt.Text = lastname.ToString();
-                    EmailTxt.Text = email.ToString();
-                    PhoneTxt.Text = phoneno.ToString();
-                    rbFemale.Text = gender.ToString();
-                    rbMale.Text = gender.ToString();
-                    DOBDtp.Text = dob.ToString();
-                    JoindateDtp.Text = joindate.ToString();
-                    SalTxt.Text = Salary.ToString();
-                    AddressTxt.Text = address.ToString();
-                    cmbAge.Text = age.ToString();
                 }
                 else
                 {
-                    MessageBox.Show("Missing Information!");
+                    MessageBox.Show("No Product Available to Update");
                 }
             }
+            catch(Exception ex) { }
 
-            catch (Exception ex) { }
         }
 
-        private void SaveBtn_Click(object sender, EventArgs e)
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.PopulateGridview();
+            this.pnlEdit.Enabled = false;
+            this.btnEdit.Enabled = true;
+            this.CLearAllField();
+        }
+
+        private void dgvShowEmployee_DoubleClick(object sender, EventArgs e)
+        {
+           int index = dgvShowEmployee.CurrentCell.RowIndex;
+
+
+        }
+
+        
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
+                if (dgvShowEmployee.Rows.Count > 0)
+                {
+                    int index = dgvShowEmployee.CurrentCell.RowIndex;
+                    this.Id = dgvShowEmployee.Rows[index].Cells["UserId"].Value.ToString();
 
-                    if ( FnameTxt.Text == " " || LnameTxt.Text == " " ||  PhoneTxt.Text == " " || cmbAge.Text == " " || AddressTxt.Text == " " || SalTxt.Text == "" || EmailTxt.Text == "")
-                   {
-                       MessageBox.Show("Missing Information!");
-                   }
-                   else
-                  {
-                       Con.Open();
-                        string Query = "update ETBL set Serial_No='" + "',First_Name='" + FnameTxt.Text + "',Last_Name='" + LnameTxt.Text + "',Phone_No='" + PhoneTxt.Text + "',Age='" + cmbAge.Text + "',Email='" + EmailTxt.Text + "',Password='" + "',Address='" + AddressTxt.Text + "',Salary='" + SalTxt.Text + "',Gender='" + rbMale.ToString() + rbFemale.ToString() + "',Date_Of_Birth='" + DOBDtp.Value.Date + "',Joindate='" + JoindateDtp.Value.Date + "',Position='" +  "',Assigned_By='" + "';";
-                        SqlCommand cmd = new SqlCommand(Query, Con);
-                       cmd.ExecuteNonQuery();
-                        Con.Close();
-                        MessageBox.Show("Data Updated Successfully!");
-                       
+                    DialogResult result = MessageBox.Show("Do you want to continue?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // Check which button was clicked
+                    if (result == DialogResult.Yes)
+                    {
+                        string query = "delete from UserTB where UserId = '" + this.Id + "' ";
+                        int rowAffected = DBAccess.ExecuteDMLQuery(query);
+                        MessageBox.Show("Product has Been Deleted");
+                        this.PopulateGridview();
                     }
+                    else if (result == DialogResult.No)
+                    {
+                        return;
+                    }
+
+
                 }
-                catch (Exception ex)
+                else
                 {
-                   MessageBox.Show (ex.Message);
-               }
-                finally
-                {
-                    Con.Close();
+                    MessageBox.Show("No Product Available");
                 }
+            }
+            catch (Exception ex) { }
         }
     }
 }

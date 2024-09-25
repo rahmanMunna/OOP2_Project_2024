@@ -38,22 +38,20 @@ namespace Program_Files.Employee_Panel
         {
             try
             {
-                string query = "Select Password from UserTB where userID = '"+ this.DashBoard.User.UserId + "'";
+                string query = "Select Password from UserTB where userID = '"+ this.DashBoard.UserId + "'";
                 string oldPassword = DBAccess.ExecuteQuery(query).Rows[0][0].ToString();
 
                 if (oldPassword == txtOldPassword.Text)
                 {
                     if (txtNewPassword.Text == txtConfirmPassword.Text)
                     {
-                        string query2 = "Update UserTB set password = '" + txtConfirmPassword.Text + "' where userID = '"+this.DashBoard.User.UserId+ "' ";
+                        string query2 = "Update UserTB set password = '" + txtConfirmPassword.Text + "' where userID = '"+this.DashBoard.UserId+ "' ";
                         int rowAffected = DBAccess.ExecuteDMLQuery(query2);
 
                         if (rowAffected == 1)
                         {
                             MessageBox.Show("Password has been Updated!");
                             this.CLearAllField();
-                            this.DashBoard.Show();
-                            this.Hide();
                         }
                         else
                         {
@@ -70,11 +68,7 @@ namespace Program_Files.Employee_Panel
                     MessageBox.Show("Your Old Password Didn't Match");
                 }
             }
-
-            catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message);
-            }
+            catch (Exception ex) { }
         }
 
         

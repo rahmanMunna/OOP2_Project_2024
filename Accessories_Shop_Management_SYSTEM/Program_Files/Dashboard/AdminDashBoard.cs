@@ -18,19 +18,17 @@ namespace Program_Files.Dashboard
     {
         private Button btnAddEmployee;
         private Button btnManageProduct;
-        private Button logoutBtn;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
         private Button CrossBtn;
-        private Label label1;
         private LoginFrame loginFrame;
         internal dynamic User {  get; set; }    
 
         public AdminDashboard()
         {
             InitializeComponent();
+            this.CheckNotificatino();
         }
         public AdminDashboard(LoginFrame loginFrame,dynamic user) : this()
         {
@@ -71,7 +69,7 @@ namespace Program_Files.Dashboard
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
-            this.CheckNotificatino();
+           
         }
 
         private void ViewBtn_Click(object sender, EventArgs e)
@@ -123,7 +121,7 @@ namespace Program_Files.Dashboard
 
         private void btnManageProduct_Click(object sender, EventArgs e)
         {
-            //new ManageProduct(this).Show(); 
+            new ManageProduct(this).Show(); 
             this.Hide();
         }
 
@@ -131,6 +129,18 @@ namespace Program_Files.Dashboard
         {
             new UpdatePassword(this).Show();
             this.Hide();
+        }
+
+        private void btnManageEmployee_Click(object sender, EventArgs e)
+        {
+            new ManageEmployee(this).Show();    
+            this.Hide();    
+        }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            new ShowInvoice(this).Show();
+            this.Hide();    
         }
     }
 }

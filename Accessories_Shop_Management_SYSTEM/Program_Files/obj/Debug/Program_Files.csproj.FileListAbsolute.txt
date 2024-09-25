@@ -32,3 +32,4 @@ D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Pr
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Employee_Panel.EmployeeDashboard.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ManageEmployee.resources
 D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ManageProduct.resources
+D:\C#_Project_2024\Accessories_Shop_Management_SYSTEM\Program_Files\obj\Debug\Program_Files.Admin_Panel.ShowInvoice.resources

@@ -15,7 +15,7 @@ namespace Program_Files.Employee_Panel
     public partial class EmployeeDashBoard : Form
     {
         private LoginFrame loginFrame;
-        public User user;
+        public User User;
         public EmployeeDashBoard()
         {
             InitializeComponent();
@@ -23,8 +23,8 @@ namespace Program_Files.Employee_Panel
         public EmployeeDashBoard(LoginFrame login,User user) : this()
         {
             this.loginFrame = login;
-            this.user = user;
-            this.lblUserName.Text = "Welcome " + this.user.UserName;
+            this.User = user;
+            this.lblUserName.Text = "Welcome " + this.User.UserName;
         }
         private void lblUserName_Click(object sender, EventArgs e)
         {
@@ -62,6 +62,11 @@ namespace Program_Files.Employee_Panel
         {
             this.loginFrame.Show(); 
             this.Hide();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

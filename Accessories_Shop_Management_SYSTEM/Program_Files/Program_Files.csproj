@@ -76,6 +76,12 @@
     <Compile Include="Admin Panel\ManageProduct.Designer.cs">
       <DependentUpon>ManageProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin Panel\ShowInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin Panel\ShowInvoice.Designer.cs">
+      <DependentUpon>ShowInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Admin.cs" />
     <Compile Include="Classes\Employee.cs" />
     <Compile Include="Classes\ComponentList.cs" />
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin Panel\ManageProduct.resx">
       <DependentUpon>ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin Panel\ShowInvoice.resx">
+      <DependentUpon>ShowInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -198,6 +207,11 @@
     <None Include="Resources\icons8-right-arrow-ezgif.com-resize-2.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Employee.jpg" />
+    <None Include="Resources\admindash.png" />
+    <None Include="Resources\admindash1.png" />
+    <None Include="Resources\Admindashboard2.jpg" />
+    <None Include="Resources\admn.jpg" />
     <Content Include="Resources\icons8-admin-96.png" />
     <None Include="Resources\icons8-cross-ezgif.com-resize.gif" />
     <None Include="Resources\icons8-search.gif" />
@@ -217,8 +231,10 @@
     <None Include="Resources\icons8-bullet-list-961.png" />
     <None Include="Resources\icons8-password-961.png" />
     <None Include="Resources\icons8-logout-96.png" />
+    <None Include="Resources\icons8-logoff-32.png" />
     <Content Include="Resources\Logout.png" />
     <Content Include="Resources\Profile.png" />
+    <None Include="Resources\real admin.jpg" />
     <Content Include="Resources\Search Property.png" />
   </ItemGroup>
   <ItemGroup>
