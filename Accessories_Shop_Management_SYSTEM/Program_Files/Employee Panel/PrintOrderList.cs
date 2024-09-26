@@ -128,7 +128,7 @@ namespace Program_Files.Employee_Panel
                 document.Open();
                 Paragraph pTitle = new Paragraph("Invoice Id : "+this.InvoiceId+"\n\n");
                 Paragraph p = new Paragraph("==========================================================================\n\n");
-                Paragraph p1 = new Paragraph("Customer Name : " + this.CustomerName + "\n\n" + "Customer Phone Number : " + this.CustomerPhoneNUmber + "\n\n" + "Payment Method : " + this.PaymentMethod + "\n\n" + "Date : " + date + "\n\n"+"Sales Person : "+this.Dashboard.user.UserName+"\n\n"+"Bill Prepared By : "+this.Dashboard.user.UserName+"\n\n\n");
+                Paragraph p1 = new Paragraph("Customer Name : " + this.CustomerName + "\n\n" + "Customer Phone Number : " + this.CustomerPhoneNUmber + "\n\n" + "Payment Method : " + this.PaymentMethod + "\n\n" + "Date : " + date + "\n\n"+"Sales Person : "+this.Dashboard.User.UserName+"\n\n"+"Bill Prepared By : "+this.Dashboard.User.UserName+"\n\n\n");
                 Paragraph p3 = new Paragraph("---------------------------  Product Name - Quantity - Total Price - Total Discount------------------------\n\n");
 
                 document.Add(pTitle);
@@ -186,7 +186,7 @@ namespace Program_Files.Employee_Panel
 
 
 
-                string query2 = "insert into InvoiceTb values('" + this.InvoiceId + "','"+this.Dashboard.user.UserName+"','Paid'," + this.BillPrice + "," + this.BillDiscount + "," + this.GrandTotal + ",'" + dtpOrderDate.Text + "','" + this.CustomerName + "','" + this.CustomerPhoneNUmber + "','"+this.Dashboard.user.UserName+"','" + this.PaymentMethod + "') ;";
+                string query2 = "insert into InvoiceTb values('" + this.InvoiceId + "','"+this.Dashboard.User.UserName+"','Paid'," + this.BillPrice + "," + this.BillDiscount + "," + this.GrandTotal + ",'" + dtpOrderDate.Text + "','" + this.CustomerName + "','" + this.CustomerPhoneNUmber + "','"+this.Dashboard.User.UserName+"','" + this.PaymentMethod + "') ;";
                 int rowAffected = DBAccess.ExecuteDMLQuery(query2);
 
                 if (rowAffected > 0)

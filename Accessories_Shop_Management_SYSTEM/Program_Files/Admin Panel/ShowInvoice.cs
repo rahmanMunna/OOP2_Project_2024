@@ -19,6 +19,7 @@ namespace Program_Files.Admin_Panel
         {
             InitializeComponent();
             this.PopulateGridView();
+            this.CalculateTotalRevenue();
         }
 
         public ShowInvoice(dynamic dashboard) : this()
@@ -34,6 +35,13 @@ namespace Program_Files.Admin_Panel
         private void ShowInvoice_Load(object sender, EventArgs e)
         {
 
+        }
+        private void CalculateTotalRevenue()
+        {
+            string query = "SELECT SUM(NetTotal) FROM InvoiceTb;";
+            string revenue = DBAccess.ExecuteQuery(query).Rows[0][0].ToString();
+
+            lblRevenue.Text = revenue;
         }
 
         private void txtSearchByPice_TextChanged(object sender, EventArgs e)

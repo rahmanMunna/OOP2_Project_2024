@@ -72,7 +72,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pnlUpdateInfo = new System.Windows.Forms.Panel();
             this.cmbQuantity = new System.Windows.Forms.ComboBox();
-            this.cmbWarranty = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.btnReload = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cmbWarranty = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.panel4.SuspendLayout();
@@ -509,26 +509,6 @@
             this.cmbQuantity.Size = new System.Drawing.Size(100, 29);
             this.cmbQuantity.TabIndex = 36;
             // 
-            // cmbWarranty
-            // 
-            this.cmbWarranty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbWarranty.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbWarranty.FormattingEnabled = true;
-            this.cmbWarranty.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
-            this.cmbWarranty.Location = new System.Drawing.Point(108, 28);
-            this.cmbWarranty.Name = "cmbWarranty";
-            this.cmbWarranty.Size = new System.Drawing.Size(100, 29);
-            this.cmbWarranty.TabIndex = 35;
-            // 
             // cmbStatus
             // 
             this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -640,6 +620,26 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cmbWarranty
+            // 
+            this.cmbWarranty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWarranty.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbWarranty.FormattingEnabled = true;
+            this.cmbWarranty.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cmbWarranty.Location = new System.Drawing.Point(108, 28);
+            this.cmbWarranty.Name = "cmbWarranty";
+            this.cmbWarranty.Size = new System.Drawing.Size(100, 29);
+            this.cmbWarranty.TabIndex = 35;
+            // 
             // ManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,10 +734,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.ComboBox cmbWarranty;
         private System.Windows.Forms.ComboBox cmbQuantity;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtSearchByProduct;
         private System.Windows.Forms.Button btnReload;
+        private System.Windows.Forms.ComboBox cmbWarranty;
     }
 }

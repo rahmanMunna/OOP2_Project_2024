@@ -187,6 +187,11 @@ namespace Program_Files.Admin_Panel
                     int discount = Convert.ToInt32(dgvProductList.Rows[index].Cells["Discount"].Value);
                     int regularPrice = Convert.ToInt32(dgvProductList.Rows[index].Cells["RegularPrice"].Value);
 
+
+                    cmbWarranty.Text = dgvProductList.Rows[index].Cells["Warranty"].Value.ToString();
+                    cmbStatus.Text = dgvProductList.Rows[index].Cells["Status"].Value.ToString();
+                    //txtDiscount.Text = dgvProductList.Rows[index].Cells["Discount"].Value.ToString();
+                   // txtRegularPrice.Text = dgvProductList.Rows[index].Cells["RegularPrice"].Value.ToString();
                     txtDiscount.Text = discount.ToString();
                     txtRegularPrice.Text = regularPrice.ToString();
                 }
@@ -236,7 +241,7 @@ namespace Program_Files.Admin_Panel
                         }
                         else
                         {
-                            string query = "UPDATE Product2TB SET  Quantity = " + updatedQuantity + " ,RegularPrice = " + updatedRegularPrice + ", Status = '" + updatedStatus + "',Discount= " + updatedDiscount + ", UpdatedPrice = " + updatedPrice + " ,Warranty = " + updatedWarranty + "  WHERE Barcode = '" + barcode + "';";
+                            string query = "UPDATE Product2TB SET  Quantity = " + updatedQuantity + " ,RegularPrice = " + updatedRegularPrice + ", Status = '" + updatedStatus + "',Discount= " + updatedDiscount + ", UpdatedPrice = " + updatedPrice + " ,Warranty = " + updatedWarranty + " ,OutOfStockStatus = 0  WHERE Barcode = '" + barcode + "';";
                             rowAffected = DBAccess.ExecuteDMLQuery(query);  
                         }
 
@@ -280,6 +285,11 @@ namespace Program_Files.Admin_Panel
             this.cmbBrandName.SelectedIndex = -1;
             this.cmbModel.SelectedIndex = -1;
             this.cmbComponent.SelectedIndex = -1;
+            this.cmbStatus.SelectedIndex = -1;
+            this.cmbQuantity.SelectedIndex = -1;    
+            this.cmbWarranty.SelectedIndex = -1;    
+            txtDiscount.Text = string.Empty;
+            txtRegularPrice.Text = string.Empty;    
 
             this.PopulateGridView();
         }
@@ -369,5 +379,7 @@ namespace Program_Files.Admin_Panel
             }
             catch (Exception ex) { }
         }
+
+   
     }
 }

@@ -305,15 +305,23 @@ namespace Program_Files.Admin_Panel
         {
 
             cmbBrandName.Items.Clear();
+            cmbCapacity.SelectedIndex = -1;
+            cmbFrequency.SelectedIndex = -1;
+
             string selectedItem = this.cmbType.Text.ToLower();
-            if (this.cmbType.Text == "RAM" || this.cmbType.Text == "SSD")
+
+            if (this.cmbType.Text == "RAM")
+            {
+
+                this.pnlAdditional.Visible = true;
+                this.cmbFrequency.Enabled = true;
+                this.lblFrequency.Enabled = true;
+            }
+            else if(this.cmbType.Text == "SSD")
             {
                 this.pnlAdditional.Visible = true;
-                if(this.cmbType.Text == "SSD")
-                {
-                    this.cmbFrequency.Enabled = false;
-                    this.lblFrequency.Enabled = false;
-                }
+                this.cmbFrequency.Enabled = false;
+                this.lblFrequency.Enabled = false;
             }
             else
             {
@@ -390,7 +398,7 @@ namespace Program_Files.Admin_Panel
                     if (!IsExist())
                     {
 
-                        MessageBox.Show("Not Exist");
+                        //MessageBox.Show("Not Exist");
                         this.Serial = serialNo;
                         serialNo++;
                         Random rn = new Random();
@@ -401,6 +409,8 @@ namespace Program_Files.Admin_Panel
                         dgvAddProduct.DataSource = dt;
 
                         this.ClearAllField();
+                        cmbFrequency.SelectedIndex = -1;
+                        cmbCapacity.SelectedIndex = -1;
 
                     }
 
@@ -434,7 +444,7 @@ namespace Program_Files.Admin_Panel
 
                 }
                 catch (Exception ex) {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
 
@@ -483,14 +493,14 @@ namespace Program_Files.Admin_Panel
                    
                     for(int i = 0;i < dgvAddProduct.Rows.Count-1;i++) 
                     {
-                        MessageBox.Show(dgvAddProduct.RowCount.ToString());
-                        MessageBox.Show(dgvAddProduct.Rows.Count.ToString());
+                       // MessageBox.Show(dgvAddProduct.RowCount.ToString());
+                        //MessageBox.Show(dgvAddProduct.Rows.Count.ToString());
                         string query = "INSERT INTO Product2TB values(@barcode,@component,@brandName,@model,@capacity,@frequency,@warranty,@quantity,@buyingPrice,@regularPrice,@discount,@updatedPrice,@status,@addedBy,@assignDate,@outOfStock)";
 
                         connection.Open();
                         SqlCommand sqlCommand = new SqlCommand(query, connection);
                         DataGridViewRow row = dgvAddProduct.Rows[i];
-                        MessageBox.Show(row.Cells[0].Value.ToString());
+                        //MessageBox.Show(row.Cells[0].Value.ToString());
                         
 
                         sqlCommand.Parameters.AddWithValue("@barcode", row.Cells["Barcode"].Value.ToString());

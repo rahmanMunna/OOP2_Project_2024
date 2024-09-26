@@ -60,7 +60,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.dgvAddProduct = new System.Windows.Forms.DataGridView();
             this.pnlFields.SuspendLayout();
             this.pnlAdditional.SuspendLayout();
@@ -447,7 +446,6 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.dgvAddProduct);
             this.panel1.Location = new System.Drawing.Point(799, 106);
             this.panel1.Name = "panel1";
@@ -459,7 +457,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnConfirm.Location = new System.Drawing.Point(242, 423);
+            this.btnConfirm.Location = new System.Drawing.Point(358, 423);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(110, 48);
             this.btnConfirm.TabIndex = 26;
@@ -479,19 +477,6 @@
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(405, 423);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 48);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "DELETE";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dgvAddProduct
             // 
@@ -558,7 +543,6 @@
         private System.Windows.Forms.ComboBox cmbFrequency;
         private System.Windows.Forms.ComboBox cmbCapacity;
         private System.Windows.Forms.DataGridView dgvAddProduct;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblWarranty;
         private System.Windows.Forms.ComboBox cmbWarranty;
